@@ -1,0 +1,159 @@
+Original example: Bass was sworn in by Vice President Kamala Harris, a former California senator and the first woman to serve as the nation's second-in-command. The emergency declaration will ``recognize the severity of our crisis and break new ground to maximize our ability to urgently move people inside, and do so for good. Sunday's ceremony was initially scheduled to take place outside City Hall, but rain in the forecast led to a venue shift indoors. Surprise performers at the inauguration included Stevie Wonder, who sang ``Keep Our Love Alive'' and ``Living for the City,'' and Chloe Bailey and Las Cafeteras. Amanda Gorman, the first National Youth Poet Laureate, who also delivered a poem at President Joe Biden's inauguration, said in her reading Sunday that ``the time of never before is officially past.'' Bass' father fled the Jim Crow south during the great African American migration after World War II and found work as a letter carrier. ``When I think about the dreams of working people today, I reflect on the fact that my mother and father were able to buy a home in Los Angeles for their family of six with one paycheck,'' Bass said. Bass' organizing career began in 1990 when she founded Community Coalition, a South Los Angeles social justice group in response to the crack cocaine crisis. State Senate President pro-Tempore Toni Atkins said that Bass didn't run for mayor for ``credit or photo-opps.'' Bass said her father taught her to be a critical thinker, and to understand the historical context of national and international events.
+ Entities: - Bass Inauguration: PERSON
+- 12: CARDINAL
+- 8:50 PM: TIME
+- 3rd: ORDINAL
+- Hold News Conference
+ Eds: ORG
+- Bass: PERSON
+- 7th: ORDINAL
+- Bass: PERSON
+- ERIC HE
+ City News Service: PERSON
+- LOS ANGELES: GPE
+- CNS: ORG
+- Karen Bass: PERSON
+- 43rd: ORDINAL
+- Los
+Angeles: GPE
+- today: DATE
+- the Microsoft Theater: ORG
+- first: ORDINAL
+- second: ORDINAL
+- Bass: PERSON
+- Kamala Harris: PERSON
+- California: GPE
+- first: ORDINAL
+- second: ORDINAL
+- Gavin Newsom: PERSON
+- today: DATE
+- Los Angeles: GPE
+- Bass: PERSON
+- Bass: PERSON
+- 40,000: CARDINAL
+- Angelenos: PERSON
+- Bass: PERSON
+- 9 a.m.: TIME
+- Monday: DATE
+- first: ORDINAL
+- Bass: PERSON
+- Bass: PERSON
+- 17,000: CARDINAL
+- her first
+year: DATE
+- Los Angeles: GPE
+- Bass: PERSON
+- Bass: PERSON
+- an Office of Community
+Safety: ORG
+- Bass: PERSON
+- Sunday: DATE
+- City
+Hall: FAC
+- Bass: PERSON
+- two: CARDINAL
+- LA: GPE
+- LAX: ORG
+- 241-year: DATE
+- a day: DATE
+- today: DATE
+- Los Angeles: GPE
+- Bass: PERSON
+- Mark Gonzalez: PERSON
+- the Los Angeles County Democratic Party: ORG
+- Stevie Wonder: PERSON
+- Keep Our Love: WORK_OF_ART
+- Living for the City: WORK_OF_ART
+- Chloe Bailey: PERSON
+- Las Cafeteras: ORG
+- Amanda Gorman: PERSON
+- first: ORDINAL
+- Joe Biden's: PERSON
+- Sunday: DATE
+- Gorman: PERSON
+- Sunday: DATE
+- first: ORDINAL
+- Los Angeles: GPE
+- nearly a decade: DATE
+- Eric Garcetti: PERSON
+- 2013: DATE
+- Bass: PERSON
+- Rick Caruso: PERSON
+- Nov. 8: DATE
+- City Hall: FAC
+- the past two months: DATE
+- three: CARDINAL
+- October
+2021: DATE
+- City Hall: FAC
+- Councilman Kevin de
+León: PERSON
+- Friday: DATE
+- De León: PERSON
+- Friday: DATE
+- evening: TIME
+- City Council: ORG
+- Paul Krekorian: PERSON
+- five: CARDINAL
+- new city: GPE
+- Sunday: DATE
+- Bass: PERSON
+- today: DATE
+- Krekorian: PERSON
+- Krekorian: PERSON
+- Bass: PERSON
+- the Los
+Angeles City Council: ORG
+- Bass: PERSON
+- every month: DATE
+- Bass: PERSON
+- 69: DATE
+- three: CARDINAL
+- Venice: GPE
+- Fairfax: GPE
+- Robert F. Kennedy's: PERSON
+- 1968: DATE
+- 14: DATE
+- Bass: PERSON
+- today: DATE
+- Bass: PERSON
+- the Jim Crow: ORG
+- African American: NORP
+- World War II: EVENT
+- Bass: PERSON
+- today: DATE
+- Los Angeles: GPE
+- six: CARDINAL
+- one: CARDINAL
+- Bass: PERSON
+- Bass: PERSON
+- 1990: DATE
+- Community
+Coalition: ORG
+- South Los Angeles: GPE
+- 2004: DATE
+- Bass: PERSON
+- Legislature: ORG
+- Assembly: ORG
+- Four years later: DATE
+- first: ORDINAL
+- Bass: PERSON
+- the U.S. House: ORG
+- 2010: DATE
+- the Congressional Black Caucus: ORG
+- 2019: DATE
+- Senate: ORG
+- Toni Atkins: PERSON
+- Bass: PERSON
+- Atkins: PERSON
+- Bass: PERSON
+- Bass: PERSON
+- daily: DATE
+- today: DATE
+- Los Angeles: GPE
+- Bass: PERSON
+- Angelenos: PERSON
+- L.A.: GPE
+- 2022: DATE
+- City News Service: ORG
+Begin story:

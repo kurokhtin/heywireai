@@ -1,0 +1,102 @@
+2023-02-10 16:39:17,174 INFO    MainThread:2976 [wandb_setup.py:_flush():68] Configure stats pid to 2976
+2023-02-10 16:39:17,174 INFO    MainThread:2976 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\.config\wandb\settings
+2023-02-10 16:39:17,175 INFO    MainThread:2976 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\sites\local\python\heywire\openai\demos\wandb\settings
+2023-02-10 16:39:17,175 INFO    MainThread:2976 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-02-10 16:39:17,175 INFO    MainThread:2976 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-02-10 16:39:17,180 ERROR   MainThread:2976 [wandb_setup.py:_flush():68] error
+Traceback (most recent call last):
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\wandb_init.py", line 1129, in init
+    wi.setup(kwargs)
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\wandb_init.py", line 274, in setup
+    wandb_login._login(
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\wandb_login.py", line 298, in _login
+    wlogin.prompt_api_key()
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\wandb_login.py", line 221, in prompt_api_key
+    key, status = self._prompt_api_key()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\wandb_login.py", line 201, in _prompt_api_key
+    key = apikey.prompt_api_key(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\lib\apikey.py", line 134, in prompt_api_key
+    key = input_callback(api_ask).strip()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\click\termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\click\termui.py", line 150, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+2023-02-10 16:39:17,182 INFO    MainThread:2976 [wandb_init.py:_log_setup():492] Logging user logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\demos\wandb\run-20230210_163917-wyc9jivx\logs\debug.log
+2023-02-10 16:39:17,183 INFO    MainThread:2976 [wandb_init.py:_log_setup():493] Logging internal logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\demos\wandb\run-20230210_163917-wyc9jivx\logs\debug-internal.log
+2023-02-10 16:39:17,183 INFO    MainThread:2976 [wandb_init.py:init():532] calling init triggers
+2023-02-10 16:39:17,183 INFO    MainThread:2976 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {}
+2023-02-10 16:39:17,183 INFO    MainThread:2976 [wandb_init.py:init():554] re-initializing run, found existing run on stack: hnfqdfa5
+2023-02-10 16:39:17,186 INFO    MainThread:2976 [wandb_run.py:_finish():1854] finishing run heywire/HeywireAI/hnfqdfa5
+2023-02-10 16:39:17,186 INFO    MainThread:2976 [jupyter.py:save_history():449] not saving jupyter history
+2023-02-10 16:39:17,187 INFO    MainThread:2976 [jupyter.py:save_ipynb():379] not saving jupyter notebook
+2023-02-10 16:39:17,187 INFO    MainThread:2976 [wandb_init.py:_jupyter_teardown():420] cleaning up jupyter logic
+2023-02-10 16:39:17,187 INFO    MainThread:2976 [wandb_run.py:_atexit_cleanup():2083] got exitcode: 0
+2023-02-10 16:39:17,188 INFO    MainThread:2976 [wandb_run.py:_restore():2066] restore
+2023-02-10 16:39:17,188 INFO    MainThread:2976 [wandb_run.py:_restore():2072] restore done
+2023-02-10 16:39:20,931 INFO    MainThread:2976 [wandb_run.py:_footer_history_summary_info():3442] rendering history
+2023-02-10 16:39:20,931 INFO    MainThread:2976 [wandb_run.py:_footer_history_summary_info():3474] rendering summary
+2023-02-10 16:39:20,938 INFO    MainThread:2976 [wandb_run.py:_footer_sync_info():3398] logging synced files
+2023-02-10 16:39:20,945 INFO    MainThread:2976 [wandb_init.py:init():588] starting backend
+2023-02-10 16:39:20,945 INFO    MainThread:2976 [wandb_init.py:init():592] setting up manager
+2023-02-10 16:39:20,956 INFO    MainThread:2976 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2023-02-10 16:39:20,967 INFO    MainThread:2976 [wandb_init.py:init():599] backend started and connected
+2023-02-10 16:39:20,975 INFO    MainThread:2976 [wandb_run.py:_label_probe_notebook():1203] probe notebook
+2023-02-10 16:39:20,976 INFO    MainThread:2976 [wandb_run.py:_label_probe_notebook():1213] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-02-10 16:39:20,976 INFO    MainThread:2976 [wandb_init.py:init():687] updated telemetry
+2023-02-10 16:39:21,063 INFO    MainThread:2976 [wandb_init.py:init():727] communicating run to backend with 60.0 second timeout
+2023-02-10 16:39:22,235 INFO    MainThread:2976 [wandb_run.py:_on_init():2134] communicating current version
+2023-02-10 16:39:22,279 INFO    MainThread:2976 [wandb_run.py:_on_init():2143] got version response 
+2023-02-10 16:39:22,280 INFO    MainThread:2976 [wandb_init.py:init():775] starting run threads in backend
+2023-02-10 16:39:22,579 INFO    MainThread:2976 [wandb_run.py:_console_start():2114] atexit reg
+2023-02-10 16:39:22,579 INFO    MainThread:2976 [wandb_run.py:_redirect():1969] redirect: 3
+2023-02-10 16:39:22,579 INFO    MainThread:2976 [wandb_run.py:_redirect():2034] Wrapping output streams.
+2023-02-10 16:39:22,580 INFO    MainThread:2976 [wandb_run.py:_redirect():2059] Redirects installed.
+2023-02-10 16:39:22,580 INFO    MainThread:2976 [wandb_init.py:init():817] run started, returning control to user process
+2023-02-10 16:42:12,116 INFO    MainThread:2976 [wandb_setup.py:_flush():68] Configure stats pid to 2976
+2023-02-10 16:42:12,116 INFO    MainThread:2976 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\.config\wandb\settings
+2023-02-10 16:42:12,117 INFO    MainThread:2976 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\sites\local\python\heywire\openai\demos\wandb\settings
+2023-02-10 16:42:12,117 INFO    MainThread:2976 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-02-10 16:42:12,117 INFO    MainThread:2976 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-02-10 16:42:12,131 ERROR   MainThread:2976 [wandb_setup.py:_flush():68] error
+Traceback (most recent call last):
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\wandb_init.py", line 1129, in init
+    wi.setup(kwargs)
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\wandb_init.py", line 274, in setup
+    wandb_login._login(
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\wandb_login.py", line 298, in _login
+    wlogin.prompt_api_key()
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\wandb_login.py", line 221, in prompt_api_key
+    key, status = self._prompt_api_key()
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\wandb_login.py", line 201, in _prompt_api_key
+    key = apikey.prompt_api_key(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\lib\apikey.py", line 134, in prompt_api_key
+    key = input_callback(api_ask).strip()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\click\termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\click\termui.py", line 150, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+2023-02-10 16:42:12,133 INFO    MainThread:2976 [wandb_init.py:_log_setup():492] Logging user logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\demos\wandb\run-20230210_164212-xdnto71b\logs\debug.log
+2023-02-10 16:42:12,133 INFO    MainThread:2976 [wandb_init.py:_log_setup():493] Logging internal logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\demos\wandb\run-20230210_164212-xdnto71b\logs\debug-internal.log
+2023-02-10 16:42:12,133 INFO    MainThread:2976 [wandb_init.py:_jupyter_setup():438] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x000002B255005610>
+2023-02-10 16:42:12,134 INFO    MainThread:2976 [wandb_init.py:init():532] calling init triggers
+2023-02-10 16:42:12,134 INFO    MainThread:2976 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {}
+2023-02-10 16:42:12,134 INFO    MainThread:2976 [wandb_init.py:init():554] re-initializing run, found existing run on stack: wyc9jivx
+2023-02-10 16:42:12,137 INFO    MainThread:2976 [wandb_run.py:_finish():1854] finishing run heywire/HeywireAI/wyc9jivx
+2023-02-10 16:42:12,137 INFO    MainThread:2976 [wandb_run.py:_atexit_cleanup():2083] got exitcode: 0
+2023-02-10 16:42:12,138 INFO    MainThread:2976 [wandb_run.py:_restore():2066] restore
+2023-02-10 16:42:12,138 INFO    MainThread:2976 [wandb_run.py:_restore():2072] restore done
+2023-02-10 16:42:15,278 INFO    MainThread:2976 [wandb_run.py:_footer_history_summary_info():3442] rendering history
+2023-02-10 16:42:15,278 INFO    MainThread:2976 [wandb_run.py:_footer_history_summary_info():3474] rendering summary
+2023-02-10 16:42:15,285 INFO    MainThread:2976 [wandb_run.py:_footer_sync_info():3398] logging synced files
