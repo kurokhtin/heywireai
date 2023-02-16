@@ -1,0 +1,54 @@
+2023-02-15 14:19:12,222 INFO    MainThread:5256 [wandb_setup.py:_flush():68] Configure stats pid to 5256
+2023-02-15 14:19:12,222 INFO    MainThread:5256 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\.config\wandb\settings
+2023-02-15 14:19:12,222 INFO    MainThread:5256 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\sites\local\python\heywire\openai\demos\wandb\settings
+2023-02-15 14:19:12,222 INFO    MainThread:5256 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-02-15 14:19:12,222 INFO    MainThread:5256 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-02-15 14:19:12,274 INFO    MainThread:5256 [wandb_init.py:_log_setup():492] Logging user logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\demos\wandb\run-20230215_141912-jab6s73i\logs\debug.log
+2023-02-15 14:19:12,275 INFO    MainThread:5256 [wandb_init.py:_log_setup():493] Logging internal logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\demos\wandb\run-20230215_141912-jab6s73i\logs\debug-internal.log
+2023-02-15 14:19:12,275 INFO    MainThread:5256 [wandb_init.py:_jupyter_setup():438] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x000001FFA8991890>
+2023-02-15 14:19:12,275 INFO    MainThread:5256 [wandb_init.py:init():532] calling init triggers
+2023-02-15 14:19:12,275 INFO    MainThread:5256 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {}
+2023-02-15 14:19:12,275 INFO    MainThread:5256 [wandb_init.py:init():588] starting backend
+2023-02-15 14:19:12,275 INFO    MainThread:5256 [wandb_init.py:init():592] setting up manager
+2023-02-15 14:19:12,285 INFO    MainThread:5256 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2023-02-15 14:19:12,295 INFO    MainThread:5256 [wandb_init.py:init():599] backend started and connected
+2023-02-15 14:19:12,303 INFO    MainThread:5256 [wandb_run.py:_label_probe_notebook():1203] probe notebook
+2023-02-15 14:19:12,304 INFO    MainThread:5256 [wandb_run.py:_label_probe_notebook():1213] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-02-15 14:19:12,304 INFO    MainThread:5256 [wandb_init.py:init():687] updated telemetry
+2023-02-15 14:19:12,397 INFO    MainThread:5256 [wandb_init.py:init():727] communicating run to backend with 60.0 second timeout
+2023-02-15 14:19:12,704 INFO    MainThread:5256 [wandb_run.py:_on_init():2134] communicating current version
+2023-02-15 14:19:12,752 INFO    MainThread:5256 [wandb_run.py:_on_init():2143] got version response 
+2023-02-15 14:19:12,752 INFO    MainThread:5256 [wandb_init.py:init():775] starting run threads in backend
+2023-02-15 14:19:13,015 INFO    MainThread:5256 [wandb_run.py:_console_start():2114] atexit reg
+2023-02-15 14:19:13,015 INFO    MainThread:5256 [wandb_run.py:_redirect():1969] redirect: 3
+2023-02-15 14:19:13,015 INFO    MainThread:5256 [wandb_run.py:_redirect():2034] Wrapping output streams.
+2023-02-15 14:19:13,016 INFO    MainThread:5256 [wandb_run.py:_redirect():2059] Redirects installed.
+2023-02-15 14:19:13,016 INFO    MainThread:5256 [wandb_init.py:init():817] run started, returning control to user process
+2023-02-15 14:19:13,017 INFO    MainThread:5256 [jupyter.py:save_ipynb():379] not saving jupyter notebook
+2023-02-15 14:19:13,017 INFO    MainThread:5256 [wandb_init.py:_pause_backend():403] pausing backend
+2023-02-15 14:19:24,358 INFO    MainThread:5256 [wandb_init.py:_resume_backend():408] resuming backend
+2023-02-15 14:19:55,943 INFO    MainThread:5256 [jupyter.py:save_ipynb():379] not saving jupyter notebook
+2023-02-15 14:19:55,944 INFO    MainThread:5256 [wandb_init.py:_pause_backend():403] pausing backend
+2023-02-15 14:21:23,986 INFO    MainThread:5256 [wandb_init.py:_resume_backend():408] resuming backend
+2023-02-15 14:21:24,136 INFO    MainThread:5256 [wandb_setup.py:_flush():68] Configure stats pid to 5256
+2023-02-15 14:21:24,136 INFO    MainThread:5256 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\.config\wandb\settings
+2023-02-15 14:21:24,137 INFO    MainThread:5256 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\sites\local\python\heywire\openai\demos\wandb\settings
+2023-02-15 14:21:24,137 INFO    MainThread:5256 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-02-15 14:21:24,137 INFO    MainThread:5256 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-02-15 14:21:24,163 INFO    MainThread:5256 [wandb_init.py:_log_setup():492] Logging user logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\demos\wandb\run-20230215_142123-crcdsjtx\logs\debug.log
+2023-02-15 14:21:24,163 INFO    MainThread:5256 [wandb_init.py:_log_setup():493] Logging internal logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\demos\wandb\run-20230215_142123-crcdsjtx\logs\debug-internal.log
+2023-02-15 14:21:24,164 INFO    MainThread:5256 [wandb_init.py:init():532] calling init triggers
+2023-02-15 14:21:24,164 INFO    MainThread:5256 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {}
+2023-02-15 14:21:24,164 INFO    MainThread:5256 [wandb_init.py:init():554] re-initializing run, found existing run on stack: jab6s73i
+2023-02-15 14:21:24,167 INFO    MainThread:5256 [wandb_run.py:_finish():1854] finishing run heywire/HeywireAI/jab6s73i
+2023-02-15 14:21:24,167 INFO    MainThread:5256 [jupyter.py:save_history():449] not saving jupyter history
+2023-02-15 14:21:24,167 INFO    MainThread:5256 [jupyter.py:save_ipynb():379] not saving jupyter notebook
+2023-02-15 14:21:24,167 INFO    MainThread:5256 [wandb_init.py:_jupyter_teardown():420] cleaning up jupyter logic
+2023-02-15 14:21:24,168 INFO    MainThread:5256 [wandb_run.py:_atexit_cleanup():2083] got exitcode: 0
+2023-02-15 14:21:24,168 INFO    MainThread:5256 [wandb_run.py:_restore():2066] restore
+2023-02-15 14:21:24,168 INFO    MainThread:5256 [wandb_run.py:_restore():2072] restore done
+2023-02-15 14:21:27,574 INFO    MainThread:5256 [wandb_run.py:_footer_history_summary_info():3442] rendering history
+2023-02-15 14:21:27,574 INFO    MainThread:5256 [wandb_run.py:_footer_history_summary_info():3474] rendering summary
+2023-02-15 14:21:27,580 INFO    MainThread:5256 [wandb_run.py:_footer_sync_info():3398] logging synced files

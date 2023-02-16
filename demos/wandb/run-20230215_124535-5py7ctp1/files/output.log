@@ -1,0 +1,19 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "text": " Vice President Kamala Harris will swear in Karen Bass as the 43rd mayor of Los Angeles in an inauguration ceremony on Sunday, in a meeting of two Democratic women who have broken barriers in politics. Bass, 69, the first female mayor of the City of Angels, began her career as a physician assistant in Los Angeles County's emergency room in 1990, and she founded Community Coalition, a South Los Angeles social justice group, four years later in response to the crack cocaine crisis. After winning her race, Bass alluded to her history of firsts when she told reporters the accomplishment of becoming the first female mayor of Los Angeles was still \"sinking in.\" She said, \u201cWhen you\u2019re in a position like this \u2013 and I was in a similar position when I was sworn in as speaker \u2013 it means that you have extra responsibility. The path that you go is laying the foundation for those that come behind you.\u201d Bass's career as an organizer was a factor in her election, having been able to put together a coalition of Black voters in South Los Angeles and White progressives from the City's west side to overcome her billionaire opponent, Rick Caruso's campaign spending. Bass promised to address the homelessness crisis that plagues the City, vowing to spend her first day in office declaring a state of emergency on the issue. \"I will start my first day as mayor at the city's emergency operations centers, where my first act as mayor will be to declare a state of emergency on homelessness,\" Bass said. \"I will recognize the severity of our crisis and break new ground to maximize our ability to urgently move people inside, and do so for good.\" \nThe ceremony was initially scheduled to take place outside of City Hall, but due to the rain, it was moved indoors. Numerous prominent politicians were in attendance to swear-in Bass, including California State Senate President pro-tempore Toni Atkins, Los Angeles County Democratic Party Chairman Mark Gonzalez, U.S. Ambassador to India-nominee Paul Krekorian and Governor Gavin Newsom. Surprise performers included Stevie Wonder, who sang \"Keep Our Love Alive\" and \"Living for the City,\" and Chloe Bailey and Las Cafeteras. Amanda Gorman, the first National Youth Poet Laureate, also read a poem at the inauguration, saying, \u201cThe time of never before is officially past.\u201d Thanks to Bass's first day in office declaring a state of emergency on the homeless issue, Los Angeles mayors to come will have extra responsibility to continue down the path that Bass has laid for them."
+    }
+  ],
+  "created": 1676493964,
+  "id": "cmpl-6kIxAEnTxviWbA7bB9UcrTRN32R81",
+  "model": "text-davinci-003",
+  "object": "text_completion",
+  "usage": {
+    "completion_tokens": 522,
+    "prompt_tokens": 1622,
+    "total_tokens": 2144
+  }
+}
