@@ -1,0 +1,41 @@
+{
+    "os": "Windows-10-10.0.18363-SP0",
+    "python": "3.11.1",
+    "heartbeatAt": "2023-02-24T18:47:55.735420",
+    "startedAt": "2023-02-24T18:47:54.689264",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "demos/Aylien.ipynb",
+    "root": "C:/Users/beaconproduction/sites/local/python/heywire/openai",
+    "git": {
+        "remote": "https://github.com/kurokhtin/heywireai.git",
+        "commit": "21c90270497e04808fbfae8b1074c400394c7a61"
+    },
+    "email": "akurokhtin@beaconmedianews.com",
+    "host": "Production1",
+    "username": "beaconproduction",
+    "executable": "C:\\Users\\beaconproduction\\sites\\local\\python\\heywire\\openai\\venv\\Scripts\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 2800.0,
+        "min": 0.0,
+        "max": 2800.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2800.0,
+            "min": 0.0,
+            "max": 2800.0
+        }
+    ],
+    "disk": {
+        "total": 930.8623695373535,
+        "used": 412.91542053222656
+    },
+    "memory": {
+        "total": 31.927474975585938
+    }
+}
