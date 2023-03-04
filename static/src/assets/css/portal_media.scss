@@ -354,7 +354,7 @@
 		    border-radius: 0;
 		    display: flex;
 		    align-items: center;
-		    justify-content: end;
+		    justify-content: flex-end;
 		    & ul{
 		    	display: flex;
 			    flex-direction: column;
@@ -616,6 +616,9 @@
     }
     .relative_list.with_support_block .see_all{
 		display: none!important;
+	}
+	.profile_sticky_wrapper{
+		position: static;
 	}
 }
 @media (max-width:768px){

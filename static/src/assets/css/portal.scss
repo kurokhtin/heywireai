@@ -616,11 +616,11 @@ footer{
             }
             &:not(.disabled):hover:after {
                 // transform: rotate(-180deg);
-                @include selectIcon('' + $black +'');
+                @include selectIcon('#{$black}');
             }
             &:after{
                 content: "";
-                @include selectIcon('' + $gray-text +'');
+                @include selectIcon('#{$gray-text}');
                 width: 20px;
                 height: 20px;
                 display: block;
@@ -2627,7 +2627,7 @@ hr{
         & .dzu-inputLabel{
             color: $blue;
             &:before{
-                @include downloadIcon('' + $blue +'');
+                @include downloadIcon('#{$blue}');
             }
         }
     }
@@ -2679,7 +2679,7 @@ hr{
         transition: $transition;
         &:before{
             content: "";
-            @include downloadIcon('' + $gray-text +'');
+            @include downloadIcon('#{$gray-text}');
             display: block;
             width: 14px;
             height: 13px;
@@ -3943,7 +3943,7 @@ sub{
         height: 40px;
         &:before{
             content: '';
-            @include selectIcon('' + $black +'');
+            @include selectIcon('#{$black}');
             display: block;
             width: 20px;
             height: 20px;
@@ -3963,7 +3963,7 @@ sub{
             width: 40px;
             &:before{
                 content: '';
-                @include selectIcon('' + $black +'');
+                @include selectIcon('#{$black}');
                 display: block;
                 width: 20px;
                 height: 20px;
@@ -4447,7 +4447,7 @@ sub{
                             & .pitch_accept_btn_wrap{
                                 margin-top: auto;
                                 display: flex;
-                                justify-content: end;
+                                justify-content: flex-end;
                                 & .button{
                                     margin: 0;
                                 }
@@ -5231,8 +5231,5 @@ body.modal-open{
 
 
 
-
-
-
-
-@import "portal_media.scss"
+@import "portal_media.scss";
+@import "dashboard.scss";
