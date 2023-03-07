@@ -1,32 +1,100 @@
 import React, { useState, useEffect } from 'react'
 import Select, { components } from 'react-select'
 import Chevroncon from 'components/icons/Chevroncon'
+import api from 'components/utils/api'
 
-export default function Filters(){
+export default function Filters(props){
+
+    const [inputFormData , setFormData] = useState({
+        cats: [],
+        word_count: 500,
+        datetime: '',
+        location: '',
+        writing_style: '',
+        total: 5,
+        token: '344a7e67c939a28e3a250d57e3b63cf7'
+    })
+
+    const datetime_options = [
+        {
+            value: 'NOW-1DAYS/DAY',
+            label: 'Today'
+        },
+        {
+            value: 'NOW-2DAYS/DAY',
+            label: 'Last 2 days'
+        }
+    ]
+
+    const location_options = [
+        {
+            value: 'Q65',
+            label: 'Los Angeles'
+        },
+        {
+            value: 'Q30',
+            label: 'United States'
+        }
+    ]
+
+    const writing_style_options = [
+        {
+            value: 'funny',
+            label: 'Funny'
+        },
+        {
+            value: 'serious',
+            label: 'Serious'
+        }
+    ]
 
     const [items, setItems] = useState([
         {
-            value: "parent1",
-            label: "parent 1",
+            value: "ay.sports",
+            label: "Sports",
             spread: false,
             children: [
                 {
-                    value: "child1",
-                    label: "child1"
+                    value: "ay.sports.nba",
+                    label: "NBA"
                 },
                 {
-                    value: "child2",
-                    label: "child2"
+                    value: "ay.sports.nfl",
+                    label: "NFL"
                 }
             ]
         },
         {
-            value: "parent2",
-            label: "parent 2",
+            value: "ay.lifesoc.crime",
+            label: "Crime",
             spread: false,
-            children: []
-        }
+            children: [
+                {
+                    value: "ay.biz.crime",
+                    label: "Business Crime"
+                },
+                {
+                    value: "ay.lifesoc.hatecrim",
+                    label: "Hate Crime"
+                },
+                {
+                    value: "ay.lifesoc.homicide",
+                    label: "Homicide"
+                }
+            ]
+        },
     ]);
+
+    const handleSelectChange = (selected, select) => {
+        if(selected){
+            setFormData((inputFormData) => ({...inputFormData, [select.name]: selected.value }))
+        }
+        else{
+            setFormData((inputFormData) => ({...inputFormData, [select.name]: '' }))
+        }
+    };
+
+
     const [selected, setSelected] = useState(null);
 
     const handleSpreadClick = (item) => {
@@ -129,22 +197,65 @@ export default function Filters(){
     };
 
     const handleMultiSelectChange = (selectedOptions, select) => {
-        // console.log(selectedOptions, select)
+        const onlyValues = selectedOptions.map(index => {
+            return index.value
+        })
+        setFormData((inputFormData) => ({
+            ...inputFormData,
+            [select.name]: onlyValues.join(', ')
+        }));
     }
 
-    const [inputFormData , setFormData] = useState({
-        categoties: []
+    const inputsHandler = (e) => {
+        setFormData((inputFormData) => ({
+          ...inputFormData,
+          [e.target.name]: (e.target.type === "number") ? e.target.value.replace(/[^0-9]/g, '') : e.target.value,
+        }));
+    };
+
+    const handleKeyPress = (event) => {
+        if (!/[0-9]/.test(event.key)) {
+            event.preventDefault();
+        }
+    }
+
+    const [data , setData] = useState({
+        response: null,
+        loading: false
     })
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setData((data) => ({
+          ...data,
+          loading: true
+        }));
+
+        let formData = new FormData();
+        Object.entries(inputFormData).forEach(entry => {
+            const [key, value] = entry;
+            formData.append(key, value)
+        });
+        const headers = {'Content-Type': 'application/json'};
+
+        api.post('/api/get_stories',formData,{ headers })
+            .then((response) => {
+                console.log(response)
+            })
+            .catch( (error) => {
+                console.log(error);
+            });
+    }
 
 
 	return(
 		<>
-            <form className="login form auth" id="add_assignment_form" onSubmit={e => console.log('submit')}>
+            <form className="login form auth" id="add_assignment_form" onSubmit={e => {handleSubmit(e)}}>
                 <fieldset className="one_input_wrapper width_100">
                     <Select
                         isMulti
-                        id="categoties" 
-                        name="categoties"
+                        id="cats" 
+                        name="cats"
                         options={items}
                         className="basic-multi-select select_margin_bottom"
                         classNamePrefix="select"
@@ -154,10 +265,88 @@ export default function Filters(){
                         hideSelectedOptions={false}
                         components={{ Option: NestedOption }}
                       />
-                      <input type="text" required className="select_required_input" onChange={handleMultiSelectChange} value={inputFormData.categoties}/>
+                      <input type="text" required className="select_required_input" onChange={handleMultiSelectChange} value={inputFormData.cats}/>
+                </fieldset>
+                <fieldset className="one_input_wrapper width_50">
+                    <input 
+                        type="number" 
+                        id="word_count" 
+                        name="word_count" 
+                        autoComplete="off" 
+                        required
+                        onChange={inputsHandler} 
+                        onKeyPress={handleKeyPress}
+                        defaultValue={inputFormData.word_count}
+                    />
+                    <label htmlFor="word_count">Word count</label>
+                </fieldset>
+                <fieldset className="one_input_wrapper width_50">
+                    <Select
+                        id="writing_style" 
+                        name="writing_style"
+                        options={writing_style_options}
+                        className="basic-multi-select select_margin_bottom"
+                        classNamePrefix="select"
+                        placeholder="Writing style"
+                        onChange={handleSelectChange}
+                        hideSelectedOptions={false}
+                      />
+                      <input type="text" required className="select_required_input" onChange={e => console.log('writing_style')} value={inputFormData.writing_style}/>
+                </fieldset>
+                <fieldset className="one_input_wrapper width_50">
+                    <Select
+                        id="location" 
+                        name="location"
+                        options={location_options}
+                        className="basic-multi-select select_margin_bottom"
+                        classNamePrefix="select"
+                        placeholder="Location"
+                        onChange={handleSelectChange}
+                        hideSelectedOptions={false}
+                      />
+                      <input type="text" required className="select_required_input" onChange={e => console.log('location')} value={inputFormData.location}/>
+                </fieldset>
+                <fieldset className="one_input_wrapper width_50">
+                    <Select
+                        id="datetime" 
+                        name="datetime"
+                        options={datetime_options}
+                        className="basic-multi-select select_margin_bottom"
+                        classNamePrefix="select"
+                        placeholder="Date range"
+                        onChange={handleSelectChange}
+                        hideSelectedOptions={false}
+                      />
+                      <input type="text" required className="select_required_input" onChange={e => console.log('datetime')} value={inputFormData.datetime}/>
+                </fieldset>
+                <fieldset className="one_input_wrapper width_50">
+                    <input 
+                        type="number" 
+                        id="total" 
+                        name="total" 
+                        max="10"
+                        autoComplete="off" 
+                        required
+                        onChange={inputsHandler} 
+                        onKeyPress={handleKeyPress}
+                        defaultValue={inputFormData.total}
+                    />
+                    <label htmlFor="total">Total articles</label>
+                </fieldset>
+                <fieldset className="one_input_wrapper width_50">
+                    <input 
+                        type="text" 
+                        id="token" 
+                        name="token" 
+                        autoComplete="off" 
+                        required
+                        onChange={inputsHandler} 
+                        defaultValue={inputFormData.token}
+                    />
+                    <label htmlFor="token">Secret token</label>
                 </fieldset>
                 <button form="add_assignment_form" className="button add_new_btn" type="submit">
-                    <span>Generate articles</span>
+                    <span>Get Articles</span>
                 </button>
             </form>
 		</>

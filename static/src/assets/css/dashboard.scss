@@ -27,3 +27,17 @@
         }
     }
 }
+.basic-multi-select#cats{
+    & .select__value-container{
+        & .select__multi-value:not(:first-child){
+            margin-left: 30px;
+            position: relative;
+            &:before{
+                content: "OR";
+                position: absolute;
+                left: -27px;
+                color: $black;
+            }
+        }
+    }
+}
