@@ -41,3 +41,36 @@
         }
     }
 }
+.profile{
+    & .one_item.post.article{
+        text-align: left;
+        &:before{
+            display: none;
+        }
+        & .post_image{
+            margin-bottom: 20px;
+            height: 100px;
+            background-size: cover;
+            border-radius: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100px;
+            background-color: $gray-border;
+        }
+        & .button{
+            min-width: 100%;
+        }
+    }
+    & .my_projects.mvp_articles{
+        border-radius: 0;
+        background: transparent;
+        padding: 0;
+        & .profile_sticky_wrapper{
+            background: $white;
+            border-radius: 10px 0px 0px 0px;
+            padding: 30px 30px 21px 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #F0F0F0;
+        }
+    }
+}

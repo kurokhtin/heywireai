@@ -1,6 +1,6 @@
-import os
+# import os
 
-import openai
+# import openai
 # from flask import Flask, redirect, render_template, request, url_for, jsonify
 from flask import Flask
 from application.api.routes import api
@@ -8,7 +8,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 app.register_blueprint(api, url_prefix='/api')
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 
 

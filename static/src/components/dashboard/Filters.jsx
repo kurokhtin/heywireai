@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Select, { components } from 'react-select'
 import Chevroncon from 'components/icons/Chevroncon'
 import api from 'components/utils/api'
+import axios from 'axios';
 
 export default function Filters(props){
 
@@ -221,8 +222,9 @@ export default function Filters(props){
 
     const [data , setData] = useState({
         response: null,
-        loading: false
+        loading: false,
     })
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -236,14 +238,17 @@ export default function Filters(props){
             const [key, value] = entry;
             formData.append(key, value)
         });
-        const headers = {'Content-Type': 'application/json'};
+        const headers = {'Content-Type': 'application/json', 'Accept': 'text/plain'};
+
 
         api.post('/api/get_stories',formData,{ headers })
             .then((response) => {
-                console.log(response)
+                // console.log(response)
+                props.onResult(response)
             })
             .catch( (error) => {
-                console.log(error);
+                // console.log(error);
+                props.onResult(error)
             });
     }
 
