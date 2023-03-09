@@ -55,22 +55,157 @@
             background-position: center;
             background-repeat: no-repeat;
             width: 100px;
-            background-color: $gray-border;
+            background-color: $gray-btn;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & svg{
+                width: 50px;
+                & path{
+                    fill: $dark-gray-background;
+                }
+            }
+        }
+        & .post_date{
+            white-space: pre;
         }
         & .button{
             min-width: 100%;
+        }
+    }
+    &.mvp_filters{
+        & .profile_sticky_wrapper{
+            top: 105px;
         }
     }
     & .my_projects.mvp_articles{
         border-radius: 0;
         background: transparent;
         padding: 0;
+        & .empty_block_wrap{
+            min-height: 359px;
+        }
         & .profile_sticky_wrapper{
             background: $white;
             border-radius: 10px 0px 0px 0px;
             padding: 30px 30px 21px 30px;
             margin-bottom: 30px;
-            border-bottom: 1px solid #F0F0F0;
+            border-bottom: 1px solid $hr;
+            position: static;
+            & .profile_header{
+                display: flex;
+                justify-content: space-between;
+                & .articles_selection{
+                    display: flex;
+                    gap: 30px;
+                    margin-top: -10px;
+                    margin-bottom: -10px;
+                    & .one_articles_type{
+                        cursor: pointer;
+                        text-align: center;
+                        & .article_type_title{
+                            font-weight: bold;
+                            color: $dark-gray-icon;
+                            transition: $transition;
+                        }
+                        & .article_type_icon{
+                            svg{
+                                width: 25px;
+                                & path{
+                                    transition: $transition;
+                                    fill: $dark-gray-icon;
+                                }
+                            }
+                        }
+                        &:hover, &.active{
+                            & .article_type_title{
+                                color: $blue;
+                            }
+                            & .article_type_icon{
+                                & svg path{
+                                    fill: $blue;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.modal_article{
+    & .modal_content{
+        white-space: pre-line;
+    }
+    & .react-responsive-modal-modal{
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0;
+        position: relative;
+        height: 100%;
+    }
+    & .modal_title{
+        position: sticky;
+        top: 0;
+        background: $white;
+        margin-bottom: 40px;
+    }
+    & .post_thumb{
+        max-width: 100%;
+        margin-bottom: 20px;
+        display: block;
+        max-height: 500px;
+        border-radius: 5px;
+    }
+    & .post_date, & .modal_content_article{
+        margin-bottom: 20px;
+    }
+    & .article_sources{
+        color: $gray-dark-text;
+    }
+    & .modal_article_content{
+        display: flex;
+    }
+    & .article_data_right{
+        min-width: 300px;
+        max-width: 300px;
+        margin-left: 40px;
+        background: $gray-btn;
+        max-height: calc(100vh - 130px);
+        overflow: overlay;
+        padding: 30px;
+        border-radius: 5px;
+        & .article_data_title{
+            margin-top: 0;
+        }
+        & .article_data_wrap{
+            display: flex;
+            flex-direction: column;
+            & .article_data_item{
+                color: $dark-gray-icon;
+                border-top: 1px solid $dark-gray-background;
+                margin-top: 10px;
+                padding-top: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                & span{
+                    font-weight: bold;
+                    color: $black;
+                    font-size: 1.15em;
+                }
+                &:first-child{
+                    margin-top: 0;
+                    padding-top: 0;
+                    border-top: 0;
+                }
+                &.list{
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    flex-direction: column;
+
+                }
+            }
         }
     }
 }

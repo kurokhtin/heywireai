@@ -2,17 +2,27 @@ import React, { useState, useEffect } from 'react'
 import Select, { components } from 'react-select'
 import Chevroncon from 'components/icons/Chevroncon'
 import api from 'components/utils/api'
-import axios from 'axios';
+import SuccessIcon from 'components/icons/SuccessIcon'
+import ErrorIcon from 'components/icons/ErrorIcon'
+import ModalClose from 'components/parts/ModalClose'
+import { Modal } from 'react-responsive-modal';
 
 export default function Filters(props){
-
+    const [openSmall, setOpenSmall] = useState(false)
+    const [showMessage, setShowMessage] = useState({
+        warn: null,
+        failLoad: false,
+        sending: false,
+        successIcon: false,
+        errorIcon: false
+    });
     const [inputFormData , setFormData] = useState({
         cats: [],
         word_count: 500,
         datetime: '',
         location: '',
         writing_style: '',
-        total: 5,
+        total: 0,
         token: '344a7e67c939a28e3a250d57e3b63cf7'
     })
 
@@ -24,6 +34,21 @@ export default function Filters(props){
         {
             value: 'NOW-2DAYS/DAY',
             label: 'Last 2 days'
+        }
+    ]
+
+    const total_options = [
+        {
+            value: 1,
+            label: '1'
+        },
+        {
+            value: 5,
+            label: '5'
+        },
+        {
+            value: 10,
+            label: '10'
         }
     ]
 
@@ -232,6 +257,7 @@ export default function Filters(props){
           ...data,
           loading: true
         }));
+        props.onLoading(true, inputFormData.total, false)
 
         let formData = new FormData();
         Object.entries(inputFormData).forEach(entry => {
@@ -245,10 +271,23 @@ export default function Filters(props){
             .then((response) => {
                 // console.log(response)
                 props.onResult(response)
+                props.onLoading(false, inputFormData.total, false)
             })
             .catch( (error) => {
-                // console.log(error);
+                console.log(error);
                 props.onResult(error)
+                props.onLoading(false, inputFormData.total, true)
+                if(error){
+                    setShowMessage((showMessage) => ({
+                        ...showMessage,
+                        warn: error.hasOwnProperty('response') ? error.response.data.message : error,
+                        sending: false,
+                        failLoad: true,
+                        successIcon: false,
+                        errorIcon: true
+                    }));
+                    setOpenSmall(true)
+                }
             });
     }
 
@@ -296,7 +335,8 @@ export default function Filters(props){
                         onChange={handleSelectChange}
                         hideSelectedOptions={false}
                       />
-                      <input type="text" required className="select_required_input" onChange={e => console.log('writing_style')} value={inputFormData.writing_style}/>
+                      <input type="text" required className="select_required_input" onChange={handleSelectChange} value={inputFormData.writing_style}/>
+                      {inputFormData.writing_style !== '' ? <label htmlFor="writing_style">Writing style</label> : null}
                 </fieldset>
                 <fieldset className="one_input_wrapper width_50">
                     <Select
@@ -309,7 +349,8 @@ export default function Filters(props){
                         onChange={handleSelectChange}
                         hideSelectedOptions={false}
                       />
-                      <input type="text" required className="select_required_input" onChange={e => console.log('location')} value={inputFormData.location}/>
+                      <input type="text" required className="select_required_input" onChange={handleSelectChange} value={inputFormData.location}/>
+                      {inputFormData.location !== '' ? <label htmlFor="location">Location</label> : null}
                 </fieldset>
                 <fieldset className="one_input_wrapper width_50">
                     <Select
@@ -322,21 +363,22 @@ export default function Filters(props){
                         onChange={handleSelectChange}
                         hideSelectedOptions={false}
                       />
-                      <input type="text" required className="select_required_input" onChange={e => console.log('datetime')} value={inputFormData.datetime}/>
+                      <input type="text" required className="select_required_input" onChange={handleSelectChange} value={inputFormData.datetime}/>
+                      {inputFormData.datetime !== '' ? <label htmlFor="datetime">Date range</label> : null}
                 </fieldset>
-                <fieldset className="one_input_wrapper width_50">
-                    <input 
-                        type="number" 
+                <fieldset className="one_input_wrapper width_50">          
+                    <Select
                         id="total" 
-                        name="total" 
-                        max="10"
-                        autoComplete="off" 
-                        required
-                        onChange={inputsHandler} 
-                        onKeyPress={handleKeyPress}
-                        defaultValue={inputFormData.total}
-                    />
-                    <label htmlFor="total">Total articles</label>
+                        name="total"
+                        options={total_options}
+                        className="basic-multi-select select_margin_bottom"
+                        classNamePrefix="select"
+                        placeholder="Total articles"
+                        onChange={handleSelectChange}
+                        hideSelectedOptions={false}
+                      />
+                      <input type="text" required className="select_required_input" onChange={handleSelectChange} value={inputFormData.total}/>
+                      {inputFormData.total !== 0 ? <label htmlFor="total">Total articles</label> : null}
                 </fieldset>
                 <fieldset className="one_input_wrapper width_50">
                     <input 
@@ -350,10 +392,30 @@ export default function Filters(props){
                     />
                     <label htmlFor="token">Secret token</label>
                 </fieldset>
-                <button form="add_assignment_form" className="button add_new_btn" type="submit">
+                <button form="add_assignment_form" className="button add_new_btn" type="submit" > 
+                {/*disabled={!props.finished}*/}
                     <span>Get Articles</span>
                 </button>
             </form>
+
+            <Modal 
+                open={openSmall} 
+                onClose={() => setOpenSmall(false)} 
+                center={true} 
+                classNames={{
+                    overlayAnimationOut: 'modal-overlay-out',
+                    root: 'auth',
+                    modalAnimationOut: 'modal-popup-out'
+                }}
+                showCloseIcon={false} 
+                closeOnOverlayClick={true} 
+                closeOnEsc={true}
+            >
+                <h2 className="modal_title">Error</h2>
+                <ModalClose onChange={() => setOpenSmall(false)}/>
+                <div className="modal_icon">{showMessage.successIcon ? <SuccessIcon /> : <ErrorIcon />}</div>
+                <div className="modal_content with_icon" dangerouslySetInnerHTML={{__html: showMessage.warn}}></div>
+            </Modal>
 		</>
 	)
 }
