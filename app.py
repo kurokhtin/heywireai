@@ -5,10 +5,16 @@
 from flask import Flask
 from application.api.routes import api
 from flask_cors import CORS
+# import logging
 
 app = Flask(__name__)
 app.register_blueprint(api, url_prefix='/api')
 CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+# handler = logging.FileHandler('error.log')
+# handler.setLevel(logging.ERROR)
+# app.logger.addHandler(handler)
+
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 
 

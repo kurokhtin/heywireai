@@ -1,0 +1,4 @@
+
+127.0.0.1 - - [09/Mar/2023 12:46:42] "POST /api/generate_story HTTP/1.1" 200 -
+Error: 'text'
+ * Detected change in 'C:\\Users\\beaconproduction\\sites\\local\\python\\heywire\\openai\\application\\api\\aylien.py', reloading

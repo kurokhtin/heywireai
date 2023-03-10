@@ -4,7 +4,8 @@ import aylien_news_api
 from aylien_news_api.rest import ApiException
 import json
 from flask import jsonify
-import formats
+from . import formats
+# import formats
 
 load_dotenv()
 API_ID = os.getenv("AYLIEN_API_ID")
@@ -80,8 +81,7 @@ def get_one_story(id):
 def get_relatives(id):
     rel_opts = opts.copy()
     rel_opts['story_id'], rel_opts['per_page'], rel_opts['not_id'], rel_opts['published_at_start'] = id, 2, [id], 'NOW-7DAYS'
-    rel_opts = {k: v for k, v in opts.items() if k != 'sort_by'}
-    print(rel_opts)
+    rel_opts = {k: v for k, v in rel_opts.items() if k != 'sort_by'}
     try:
         related_response = api_instance.list_related_stories_get(**rel_opts)
         return related_response.related_stories
@@ -96,10 +96,10 @@ def return_json_error(error):
     return jsonify(error_response), error.status
 
 def full_story(id):
-    original_story = get_one_story(id)
-    relatives = get_relatives(id)
-    full_article = [formats.convert_story(original_story)] + [formats.convert_story(item) for item in relatives[:2]]
-
-    print(relatives)
-
-    return full_article
+    try:
+        original_story = get_one_story(id)
+        relatives = get_relatives(id)
+        full_article = [formats.convert_story(original_story)] + [formats.convert_story(item) for item in relatives[:2]]
+        return full_article
+    except Exception as e:
+        return None

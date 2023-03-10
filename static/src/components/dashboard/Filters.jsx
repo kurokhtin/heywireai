@@ -257,7 +257,7 @@ export default function Filters(props){
           ...data,
           loading: true
         }));
-        props.onLoading(true, inputFormData.total, false)
+        props.onLoading(true, inputFormData, false)
 
         let formData = new FormData();
         Object.entries(inputFormData).forEach(entry => {
@@ -271,12 +271,12 @@ export default function Filters(props){
             .then((response) => {
                 // console.log(response)
                 props.onResult(response)
-                props.onLoading(false, inputFormData.total, false)
+                props.onLoading(false, inputFormData, false)
             })
             .catch( (error) => {
                 console.log(error);
                 props.onResult(error)
-                props.onLoading(false, inputFormData.total, true)
+                props.onLoading(false, inputFormData, true)
                 if(error){
                     setShowMessage((showMessage) => ({
                         ...showMessage,

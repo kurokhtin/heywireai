@@ -13,16 +13,14 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function App(){
     const [data , setData] = useState({
-        responseData: [],
+        aylienData: [],
+        gptData: [],
         currentType: 'original',
         loading: false,
         finished: true,
-        total: 0
+        total: 0,
+        writing_style: ''
     })
-
-    // useDidMountEffect(() => {
-    //     // getNews()
-    // }, [])
 
     // const getNews = props => {
     //      api.get('/api/hello')
@@ -38,18 +36,19 @@ export default function App(){
             // console.log(response.data)
             setData((data) => ({
                 ...data,
-                responseData: response.data
+                aylienData: response.data
             }))
         }
     }
 
-    const handleLoading = (result, total, error) =>{
+    const handleLoading = (result, form, error) =>{
 
         setData((data) => ({
             ...data,
             loading: result,
-            total: total,
-            finished: error
+            total: form.total,
+            finished: error,
+            writing_style: form.writing_style
         }))
     }
 
@@ -59,6 +58,41 @@ export default function App(){
             currentType: type
         }))
     }
+
+    useEffect(() => {
+        if(data.aylienData.length > 0 && data.loading == false){
+            data.aylienData.forEach((item) => {
+                console.log(item.id, data.writing_style)
+
+                let formData = new FormData();
+                formData.append('id', item.id)
+                formData.append('style', data.writing_style)
+                const headers = {'Content-Type': 'application/json', 'Accept': 'text/plain'};
+
+
+                api.post('/api/generate_story',formData,{ headers })
+                    .then((response) => {
+                        console.log(response)
+                        setData((data) => ({
+                            ...data,
+                            gptData: [
+                                ...data.gptData,
+                                response.data,
+                            ],
+                            finished: true
+                        }))
+                    })
+                    .catch( (error) => {
+                        console.log(error);
+                        setData((data) => ({
+                            ...data,
+                            finished: true
+                        }))
+                    });
+
+            })
+        }
+    }, [data.aylienData, data.loading])
 
     return (
         <main className="wrap dashboard">
@@ -95,7 +129,11 @@ export default function App(){
                     <div className="articles_wrap list_wrapper big">
                         {data.currentType == 'original' ?
                             data.loading == true ? <PostsListSkeleton count={data.total}/> : 
-                            data.responseData.length > 0 ? data.responseData.map((item, index) => <PostsItem key={item.id} data={item} />) : <NoProjects />
+                                data.aylienData.length > 0 ? data.aylienData.map((item, index) => <PostsItem key={item.id} data={item} typeGPT={false}/>) : <NoProjects />
+                            : 
+                            data.currentType == 'ai' ?
+                                data.finished == false ? <PostsListSkeleton count={data.total}/> : 
+                                    data.gptData.length > 0 ? data.gptData.map((item, index) => <PostsItem key={item.id + 'gpt'} data={item} typeGPT={true} />) : <NoProjects />
                             : <NoProjects />
                         }
                     </div>

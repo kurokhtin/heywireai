@@ -7,6 +7,7 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lsa import LsaSummarizer as Summarizer
 from sumy.nlp.stemmers import Stemmer
 from sumy.utils import get_stop_words
+import json
 
 def get_summary(article, count):
     LANGUAGE = "english"
@@ -27,7 +28,7 @@ def convert_story(story):
         'entrities': format_entities(story.entities), 
         'links': story.links.permalink,
         'authors': story.author.name,
-        'thumbnails':  story.media[0].url if len(story.media) > 0 else None
+        'media':  story.media[0].url if len(story.media) > 0 else None
     }
     
     if story.author.name != "":
@@ -70,7 +71,7 @@ def combine_story(story_with_relatives):
         'entities': set(),
         'links': set(),
         'authors': set(),
-        'thumbnails': set()
+        'media': set()
     }
 
     for d in story_with_relatives:
@@ -78,6 +79,9 @@ def combine_story(story_with_relatives):
         combined_story['entities'].update(d['entrities'])
         combined_story['links'].add(d['links'])
         combined_story['authors'].add(d['authors'])
-        combined_story['thumbnails'].add(d['thumbnails'])
+        combined_story['media'].add(d['media'])
 
+    # combined_story['entities'] = list(combined_story['entities']) # convert set to list for json response
+
+    # return json.dumps(combined_story, default=serialize)
     return combined_story
