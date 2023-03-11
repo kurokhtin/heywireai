@@ -43,6 +43,10 @@ export default function Filters(props){
             label: '1'
         },
         {
+            value: 2,
+            label: '2'
+        },
+        {
             value: 5,
             label: '5'
         },
@@ -64,6 +68,10 @@ export default function Filters(props){
     ]
 
     const writing_style_options = [
+        {
+            value: 'journalism',
+            label: 'Journalism'
+        },
         {
             value: 'funny',
             label: 'Funny'
@@ -392,8 +400,7 @@ export default function Filters(props){
                     />
                     <label htmlFor="token">Secret token</label>
                 </fieldset>
-                <button form="add_assignment_form" className="button add_new_btn" type="submit" > 
-                {/*disabled={!props.finished}*/}
+                <button form="add_assignment_form" className="button add_new_btn" type="submit" disabled={!props.finished}> 
                     <span>Get Articles</span>
                 </button>
             </form>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import useDidMountEffect from 'components/parts/useDidMountEffect'
+// import useDidMountEffect from 'components/parts/useDidMountEffect'
 import api from 'components/utils/api'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
@@ -10,8 +10,20 @@ import NoProjects from 'components/parts/NoProjects'
 import BrainIcon from 'components/icons/BrainIcon'
 import GlobeIcon from 'components/icons/GlobeIcon'
 import 'react-loading-skeleton/dist/skeleton.css'
+import PostsItemSkeleton from 'components/parts/PostsItemSkeleton'
+import SuccessIcon from 'components/icons/SuccessIcon'
+import ErrorIcon from 'components/icons/ErrorIcon'
+import ModalClose from 'components/parts/ModalClose'
+import { Modal } from 'react-responsive-modal'
 
 export default function App(){
+    const [openSmall, setOpenSmall] = useState(false)
+    const [showMessage, setShowMessage] = useState({
+        warn: null,
+        failLoad: false,
+        successIcon: false,
+        errorIcon: false
+    })
     const [data , setData] = useState({
         aylienData: [],
         gptData: [],
@@ -22,22 +34,20 @@ export default function App(){
         writing_style: ''
     })
 
-    // const getNews = props => {
-    //      api.get('/api/hello')
-    //         .then(response => {
-    //             console.log(response)
-    //         })
-    //         .catch(error => {
-    //            console.log(error);
-    //         });
-    // }
     const handleResult = (response) => {
         if(response.status == 200){
             // console.log(response.data)
             setData((data) => ({
                 ...data,
-                aylienData: response.data
+                currentType: 'original',
+                aylienData: response.data,
+                gptData: Array.from({ length: response.data.length }, (item, index) => ({
+                    id: response.data[index].id,
+                    loading: true
+                }))
             }))
+
+
         }
     }
 
@@ -60,39 +70,91 @@ export default function App(){
     }
 
     useEffect(() => {
-        if(data.aylienData.length > 0 && data.loading == false){
-            data.aylienData.forEach((item) => {
-                console.log(item.id, data.writing_style)
+        const sendGptRequests = async () => {
+            if (data.aylienData.length > 0 && data.loading === false) {
+                for (const item of data.aylienData) {
+                    const gptItemExist = data.gptData.find(obj => parseInt(obj.id) === parseInt(item.id))
+                    console.log(item.id, data.writing_style)
 
-                let formData = new FormData();
-                formData.append('id', item.id)
-                formData.append('style', data.writing_style)
-                const headers = {'Content-Type': 'application/json', 'Accept': 'text/plain'};
+                    if (gptItemExist && gptItemExist.loading === true) {
+                        let formData = new FormData();
+                        formData.append('id', item.id)
+                        formData.append('style', data.writing_style)
+                        const headers = { 'Content-Type': 'application/json', 'Accept': 'text/plain' };
 
+                        try {
+                            const response = await api.post('/api/generate_story', formData, { headers });
+                            const index = data.gptData.findIndex(gptItem => gptItem.id === item.id);
+                            console.log(response);
 
-                api.post('/api/generate_story',formData,{ headers })
-                    .then((response) => {
-                        console.log(response)
-                        setData((data) => ({
-                            ...data,
-                            gptData: [
-                                ...data.gptData,
-                                response.data,
-                            ],
-                            finished: true
-                        }))
-                    })
-                    .catch( (error) => {
-                        console.log(error);
-                        setData((data) => ({
-                            ...data,
-                            finished: true
-                        }))
-                    });
+                            setData((data) => {
+                                if (index !== -1) {
+                                    // found an existing object with the same id, update its properties
+                                    const updatedItem = {
+                                        ...data.gptData[index],
+                                        loading: false,
+                                        ...response.data
+                                    };
+                                    const updatedGptData = [...data.gptData];
+                                    updatedGptData[index] = updatedItem;
 
-            })
+                                    return {
+                                        ...data,
+                                        gptData: updatedGptData,
+                                        currentType: 'ai'
+                                    };
+                                } else {
+                                    // no object with the specified id was found, do nothing
+                                    return data;
+                                }
+                            });
+                        } catch (error) {
+                            console.log(error);
+                            if (error) {
+                                setShowMessage((showMessage) => ({
+                                    ...showMessage,
+                                    warn: error,
+                                    failLoad: true,
+                                    successIcon: false,
+                                    errorIcon: true
+                                }));
+                                setOpenSmall(true);
+
+                                setData((data) => ({
+                                    ...data,
+                                    finished: true,
+                                    gptData: []
+                                }))
+                            }
+                        }
+                    }
+                }
+            }
+        };
+        sendGptRequests();
+    }, [data.aylienData, data.loading]);
+
+    useEffect(() => {
+        const isAllLoaded = data.gptData.length > 0 && data.gptData.every(obj => obj.loading === false);
+        if (isAllLoaded) {
+            setData((data) => ({
+                ...data,
+                finished: true
+            }))
+            setShowMessage((showMessage) => ({
+                ...showMessage,
+                warn: 'All requested articles are generated',
+                failLoad: false,
+                successIcon: true,
+                errorIcon: false
+            }));
+            setOpenSmall(true)
+
+            setTimeout(() => {
+                setOpenSmall(false)
+            }, 2000)
         }
-    }, [data.aylienData, data.loading])
+    }, [data.gptData]);
 
     return (
         <main className="wrap dashboard">
@@ -132,14 +194,35 @@ export default function App(){
                                 data.aylienData.length > 0 ? data.aylienData.map((item, index) => <PostsItem key={item.id} data={item} typeGPT={false}/>) : <NoProjects />
                             : 
                             data.currentType == 'ai' ?
-                                data.finished == false ? <PostsListSkeleton count={data.total}/> : 
-                                    data.gptData.length > 0 ? data.gptData.map((item, index) => <PostsItem key={item.id + 'gpt'} data={item} typeGPT={true} />) : <NoProjects />
-                            : <NoProjects />
+                                data.gptData.length > 0 ? data.gptData.map((item, index) => 
+                                    item.loading == true ? <PostsItemSkeleton key={index} /> : <PostsItem key={index} data={item} typeGPT={true} />
+                                )
+                                : <NoProjects />
+                            : null
                         }
                     </div>
                 </div>
             </section>
             <Footer />
+
+            <Modal 
+                open={openSmall} 
+                onClose={() => setOpenSmall(false)} 
+                center={true} 
+                classNames={{
+                    overlayAnimationOut: 'modal-overlay-out',
+                    root: 'auth',
+                    modalAnimationOut: 'modal-popup-out'
+                }}
+                showCloseIcon={false} 
+                closeOnOverlayClick={true} 
+                closeOnEsc={true}
+            >
+                <h2 className="modal_title">Generation proccess</h2>
+                <ModalClose onChange={() => setOpenSmall(false)}/>
+                <div className="modal_icon">{showMessage.successIcon ? <SuccessIcon /> : <ErrorIcon />}</div>
+                <div className="modal_content with_icon" dangerouslySetInnerHTML={{__html: showMessage.warn}}></div>
+            </Modal>
         </main>
     );
 }

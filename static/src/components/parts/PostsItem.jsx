@@ -14,21 +14,32 @@ export default function PostsItem(props){
   	const elRef2 = useRef(null)
 
   	const filteredMedia = props.data.media.filter(media => media !== null)
-  	const randomMediaIndex = Math.floor(Math.random() * filteredMedia.length);
+  	// const randomMediaIndex = Math.floor(Math.random() * filteredMedia.length);
 	
 	useLayoutEffect(() => {
 		if (open == true) {
 			setTimeout(() =>{
 				const element1Height = elRef.current.clientHeight;
 	    		elRef2.current.style.maxHeight = `${element1Height}px`;
-			}, 10)
+			}, 100)
     	}
 	}, [open]);
+
+	const TextWithParagraphs = ({ text }) => {
+		const paragraphs = text.split('\n');
+		return (
+			<>
+				{paragraphs.map((paragraph, index) => (
+					<p key={index}>{paragraph}</p>
+				))}
+			</>
+		);
+	}
 	
 	return(
 		<>
 		 	<div onClick={e => setOpen(true)} className={'one_item post article'}>
-		 		<div className="post_image" style={filteredMedia && filteredMedia.length > 0 && filteredMedia[randomMediaIndex] !== null ? {backgroundImage: `url(${filteredMedia[randomMediaIndex]})` } : {}}>
+		 		<div className="post_image" style={filteredMedia && filteredMedia.length > 0 && filteredMedia[0] !== null ? {backgroundImage: `url(${filteredMedia[0]})` } : {}}>
 		 			{filteredMedia.length == 0 ? <ImageIcon /> : null}
 		 		</div>
 				<div className="post_data">
@@ -86,8 +97,8 @@ export default function PostsItem(props){
 		        </h2>
 		        <div className="modal_content modal_article_content post">
 		        	<div className="article_content_left" ref={elRef}>
-		        		{filteredMedia && filteredMedia.length > 0 && filteredMedia[randomMediaIndex] !== null ?
-			        		<img className="post_thumb" src={filteredMedia[randomMediaIndex]}/>
+		        		{filteredMedia && filteredMedia.length > 0 && filteredMedia[0] !== null ?
+			        		<img className="post_thumb" src={filteredMedia[0]}/>
 			        	: null}
 			        	<div className="post_date">
 							{props.typeGPT == false ?
@@ -103,15 +114,15 @@ export default function PostsItem(props){
 							}
 						</div>
 						{props.typeGPT == false ?
-			        		<div className="modal_content_article" dangerouslySetInnerHTML={{__html: props.data.body}}></div>
+			        		<div className="modal_content_article"><TextWithParagraphs text={props.data.body} /></div>
 			        	:
-			        		<div className="modal_content_article" dangerouslySetInnerHTML={{__html: props.data.text}}></div>
+			        		<div className="modal_content_article"><TextWithParagraphs text={props.data.text} /></div>
 			        	}
 			        	{props.data.links ? 
 				        	<div className="article_sources">
 				        		{props.typeGPT == false ?
 				        			<>Source: <a href={props.data.links.permalink} target="_blank">{props.data.links.permalink}</a></>
-				        		:   <>Sources: <ul>{props.data.links.map((item, index) => <li><a href={item} key={index + Math.random()} target="_blank">{item}</a></li>)}</ul></>
+				        		:   <>Sources: <ul>{props.data.links.map((item, index) => <li key={index}><a href={item} key={index + Math.random()} target="_blank">{item}</a></li>)}</ul></>
 				        		}
 				        	</div>
 				        :null}
@@ -127,7 +138,11 @@ export default function PostsItem(props){
 			        			<div className="article_data_item">
 				        			Source: <span>{props.data.source}</span>
 				        		</div>
-			        		: null}
+			        		: 
+			        			<div className="article_data_item">
+				        			Time created: <span>{props.data.response_time}s</span>
+				        		</div>
+			        		}
 			        		<div className="article_data_item">
 			        			Words count: <span>{props.data.words_count}</span>
 			        		</div>
@@ -140,23 +155,21 @@ export default function PostsItem(props){
 			        		<div className="article_data_item">
 			        			Thumbnail: <span>{filteredMedia.length > 0 ? 'True' : 'False'}</span>
 			        		</div>
+			        		<div className="article_data_item list">
+			        			Sentiment: <ul>
+			        				<li>Title: <span>{props.data.sentiment.title.polarity} ({props.data.sentiment.title.score})</span></li>
+			        				<li>Body: <span>{props.data.sentiment.body.polarity} ({props.data.sentiment.body.score})</span></li>
+			        			</ul>
+			        		</div>
 			        		{props.typeGPT == true ? 
 			        			<div className="article_data_item list">
 				        			Entities: <ul>{props.data.entities.map((item, index) => <li key={index + Math.random()}><b>{item[0]}</b> -&gt; {item[1]}</li>)}</ul>
 				        		</div>
 			        		: null}
 			        		{props.typeGPT == false ? 
-			        			<>
-					        		<div className="article_data_item list">
-					        			Sentiment: <ul>
-					        				<li>Title: <span>{props.data.sentiment.title.polarity} ({props.data.sentiment.title.score})</span></li>
-					        				<li>Body: <span>{props.data.sentiment.body.polarity} ({props.data.sentiment.body.score})</span></li>
-					        			</ul>
-					        		</div>
-					        		<div className="article_data_item list">
-					        			Categories: <ul>{props.data.categories.map((item, index) => <li key={index}>{item}</li>)}</ul>
-					        		</div>
-			        			</>
+				        		<div className="article_data_item list">
+				        			Categories: <ul>{props.data.categories.map((item, index) => <li key={index}>{item}</li>)}</ul>
+				        		</div>
 			        		: null}
 		        		</div>
 		        	</div>

@@ -149,6 +149,8 @@
         top: 0;
         background: $white;
         margin-bottom: 40px;
+        padding-right: 100px;
+        text-transform: capitalize;
     }
     & .post_thumb{
         max-width: 100%;
@@ -162,6 +164,8 @@
     }
     & .article_sources{
         color: $gray-dark-text;
+        overflow: hidden;
+        max-width: calc(100vw - 60px);
     }
     & .modal_article_content{
         display: flex;
@@ -203,9 +207,14 @@
                     align-items: flex-start;
                     justify-content: flex-start;
                     flex-direction: column;
-
+                    & ul{
+                        margin: 5px 0;
+                    }
                 }
             }
         }
     }
 }
+
+
+@import "dashboard_media.scss";

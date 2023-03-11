@@ -1,0 +1,42 @@
+2023-03-10 11:21:51,881 INFO    Thread-17 (process_request_thread):12536 [wandb_setup.py:_flush():68] Configure stats pid to 12536
+2023-03-10 11:21:51,881 INFO    Thread-17 (process_request_thread):12536 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\.config\wandb\settings
+2023-03-10 11:21:51,881 INFO    Thread-17 (process_request_thread):12536 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\settings
+2023-03-10 11:21:51,882 INFO    Thread-17 (process_request_thread):12536 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-03-10 11:21:51,882 WARNING Thread-17 (process_request_thread):12536 [wandb_setup.py:_flush():68] Could not find program at -m __main__
+2023-03-10 11:21:51,883 INFO    Thread-17 (process_request_thread):12536 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': None, 'program': '-m __main__'}
+2023-03-10 11:21:51,883 INFO    Thread-17 (process_request_thread):12536 [wandb_init.py:_log_setup():492] Logging user logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230310_112151-swn7m1jy\logs\debug.log
+2023-03-10 11:21:51,883 INFO    Thread-17 (process_request_thread):12536 [wandb_init.py:_log_setup():493] Logging internal logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230310_112151-swn7m1jy\logs\debug-internal.log
+2023-03-10 11:21:51,884 INFO    Thread-17 (process_request_thread):12536 [wandb_init.py:init():532] calling init triggers
+2023-03-10 11:21:51,884 INFO    Thread-17 (process_request_thread):12536 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {}
+2023-03-10 11:21:51,884 INFO    Thread-17 (process_request_thread):12536 [wandb_init.py:init():583] wandb.init() called when a run is still active
+2023-03-10 11:21:52,082 INFO    Thread-17 (process_request_thread):12536 [wandb_run.py:_finish():1854] finishing run heywire/HeywireAI/8qjnd0k3
+2023-03-10 11:22:22,148 INFO    Thread-21 (process_request_thread):12536 [wandb_setup.py:_flush():68] Configure stats pid to 12536
+2023-03-10 11:22:22,148 INFO    Thread-21 (process_request_thread):12536 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\.config\wandb\settings
+2023-03-10 11:22:22,148 INFO    Thread-21 (process_request_thread):12536 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\settings
+2023-03-10 11:22:22,149 INFO    Thread-21 (process_request_thread):12536 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-03-10 11:22:22,149 WARNING Thread-21 (process_request_thread):12536 [wandb_setup.py:_flush():68] Could not find program at -m __main__
+2023-03-10 11:22:22,149 INFO    Thread-21 (process_request_thread):12536 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': None, 'program': '-m __main__'}
+2023-03-10 11:22:22,150 INFO    Thread-21 (process_request_thread):12536 [wandb_init.py:_log_setup():492] Logging user logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230310_112222-fotvib4p\logs\debug.log
+2023-03-10 11:22:22,150 INFO    Thread-21 (process_request_thread):12536 [wandb_init.py:_log_setup():493] Logging internal logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230310_112222-fotvib4p\logs\debug-internal.log
+2023-03-10 11:22:22,150 INFO    Thread-21 (process_request_thread):12536 [wandb_init.py:init():532] calling init triggers
+2023-03-10 11:22:22,150 INFO    Thread-21 (process_request_thread):12536 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {}
+2023-03-10 11:22:22,151 INFO    Thread-21 (process_request_thread):12536 [wandb_init.py:init():588] starting backend
+2023-03-10 11:22:22,151 INFO    Thread-21 (process_request_thread):12536 [wandb_init.py:init():592] setting up manager
+2023-03-10 11:22:22,161 INFO    Thread-21 (process_request_thread):12536 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2023-03-10 11:22:22,171 INFO    Thread-21 (process_request_thread):12536 [wandb_init.py:init():599] backend started and connected
+2023-03-10 11:22:22,178 INFO    Thread-21 (process_request_thread):12536 [wandb_init.py:init():687] updated telemetry
+2023-03-10 11:22:22,278 INFO    Thread-21 (process_request_thread):12536 [wandb_init.py:init():727] communicating run to backend with 60.0 second timeout
+2023-03-10 11:23:22,427 ERROR   Thread-21 (process_request_thread):12536 [wandb_init.py:init():741] backend process timed out, exiting...
+encountered error: Error communicating with wandb process, exiting...
+For more info see: https://docs.wandb.ai/library/init#init-start-error
+2023-03-10 11:23:22,702 ERROR   Thread-21 (process_request_thread):12536 [wandb_init.py:init():1160] error
+Traceback (most recent call last):
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\wandb_init.py", line 1133, in init
+    run = wi.init()
+          ^^^^^^^^^
+  File "C:\Users\beaconproduction\sites\local\python\heywire\openai\venv\Lib\site-packages\wandb\sdk\wandb_init.py", line 759, in init
+    raise error
+wandb.errors.CommError: Error communicating with wandb process, exiting...
+For more info see: https://docs.wandb.ai/library/init#init-start-error

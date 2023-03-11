@@ -1,16 +1,17 @@
 import openai
 import os
 import wandb
+from . import error_handling
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def generate_story(style, source_links, entities, summary, words = 500):
     
-    prompt = f"Generate a story and a title in the {style} style for the story you generate and put the title at the first row. The story should involves the following entities and original example. Please make sure the story you generate is at least {words} words long."
+    prompt = f"Generate a story and a one short sentence as a title in the {style} style. For the story you generate put the title at the first row. The story should involves the following entities and summary. Please make sure the story you generate is at least {words} words long."
     entity_string = "\n".join([f"- {entity[0]}: {entity[1]}" for entity in entities])
     
     if summary:
-        story_prompt = f"{prompt}\nOriginal example: {summary}\n Entities: {entity_string}\n\nBegin story:"
+        story_prompt = f"{prompt}\nSummary: {summary}\n Entities: {entity_string}\n\nBegin story:"
     else:
         story_prompt = f"{prompt}\n{entity_string}\n\nBegin story:"
     
@@ -23,16 +24,22 @@ def generate_story(style, source_links, entities, summary, words = 500):
             # prompt = story_prompt,
             max_tokens=int(4000 - (len(story_prompt) / 3)),
         )
-        run = wandb.init(project='HeywireAI', entity="heywire")
-        prediction_table = wandb.Table(columns=["original_story", "prompt", "usage", "completion"])
         # prediction_table.add_data(list(source_links), story_prompt, story_completions['usage'], story_completions['choices'][0]['text'])
-        prediction_table.add_data(list(source_links), story_prompt, story_completions['usage'], story_completions['choices'][0]['message']['content'])
-        wandb.log({'predictions': prediction_table})
-        wandb.finish()
+        try:
+            run = wandb.init(project='HeywireAI', entity="heywire")
+            prediction_table = wandb.Table(columns=["original_story", "prompt", "usage", "completion"])
+            prediction_table.add_data(list(source_links), story_prompt, story_completions['usage'], story_completions['choices'][0]['message']['content'])
+            wandb.log({'predictions': prediction_table})
+            wandb.finish()
+        except Exception as e:
+            error_msg = f"Error: {str(e)}"
+            error_handling.log_error(error_msg)
+
         return story_completions['choices'][0]['message']['content']
 
     except Exception as e:
-        print(f"Error: {str(e)}")
+        error_msg = f"Error: {str(e)}"
+        error_handling.log_error(error_msg)
         return None
         # wandb.finish()
     # print(story_completions["usage"])

@@ -1,0 +1,19 @@
+@media (max-width:768px){
+	.modal_article .modal_article_content{
+		flex-wrap: wrap;
+		gap: 30px;
+		& .article_data_right{
+			max-width: 100%;
+			margin: 0;
+			width: 100%;
+			max-height: 100%!important;
+		}
+	}
+}
+@media (max-width:580px){
+	.list_wrapper.big.articles_wrap{
+		& .one_item{
+			min-width: 100%;
+		}
+	} 
+}

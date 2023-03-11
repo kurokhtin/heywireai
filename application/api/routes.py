@@ -5,6 +5,10 @@ from . import gpt
 import json
 import nltk
 import time
+from nltk.sentiment import SentimentIntensityAnalyzer
+from . import error_handling
+
+nltk.download('vader_lexicon')
 
 api = Blueprint('api', __name__)
 nltk.download('punkt')
@@ -26,6 +30,8 @@ def get_stories():
         else:
             return jsonify(error='Invalid JSON data'), 400
     except Exception as e:
+        error_msg = f"Error: {str(e)}"
+        error_handling.log_error(error_msg)
         return jsonify(error=str(e)), 400
 
 
@@ -64,9 +70,15 @@ def generate_story():
                 combined_story['entities'], 
                 combined_story['text']
             )
+            
             lines = ai_story.split('\n')
-            title = lines[0]
-            content = '\n'.join(lines[1:])
+            if lines[0] == '':
+                title = lines[1]
+                content = '\n'.join(lines[2:])
+            else:
+                title = lines[0]
+                content = '\n'.join(lines[1:])
+
             words = content.split()
             sentences = nltk.sent_tokenize(content)
             end_time = time.time()
@@ -79,6 +91,9 @@ def generate_story():
             combined_story['characters_count'] = len(content)
             combined_story['sentences_count'] = len(sentences)
             combined_story['response_time'] = "{:.2f}".format(elapsed_time)
+            combined_story['sentiment'] = {}
+            combined_story['sentiment']['body'] = get_sentiment(content)
+            combined_story['sentiment']['title'] = get_sentiment(title)
 
             return json.dumps(combined_story, default=serialize)
 
@@ -86,4 +101,17 @@ def generate_story():
         else:
             return jsonify(error='Invalid JSON data'), 400
     except Exception as e:
+        error_msg = f"Error: {str(e)}"
+        error_handling.log_error(error_msg)
         return jsonify(error=str(e)), 400
+
+def get_sentiment(text):
+    sia = SentimentIntensityAnalyzer()
+    sentiment = sia.polarity_scores(text)
+
+    if sentiment['compound'] > 0:
+        return {'polarity': 'positive', 'score': round(sentiment['compound'], 2)}
+    elif sentiment['compound'] < 0:
+        return {'polarity': 'negative', 'score': round(sentiment['compound'], 2)}
+    else:
+        return {'polarity': 'neutral', 'score': round(sentiment['compound'], 2)}
