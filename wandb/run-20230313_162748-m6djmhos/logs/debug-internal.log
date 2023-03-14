@@ -1,0 +1,180 @@
+2023-03-13 16:27:48,203 INFO    StreamThr :5544 [internal.py:wandb_internal():87] W&B internal server running at pid: 5544, started at: 2023-03-13 16:27:48.202194
+2023-03-13 16:27:48,206 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: status
+2023-03-13 16:27:48,219 INFO    WriterThread:5544 [datastore.py:open_for_write():85] open: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\run-m6djmhos.wandb
+2023-03-13 16:27:48,221 DEBUG   SenderThread:5544 [sender.py:send():336] send: header
+2023-03-13 16:27:48,314 DEBUG   SenderThread:5544 [sender.py:send():336] send: run
+2023-03-13 16:27:48,658 INFO    SenderThread:5544 [dir_watcher.py:__init__():216] watching files in: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files
+2023-03-13 16:27:48,659 INFO    SenderThread:5544 [sender.py:_start_run_threads():1067] run started: m6djmhos with start time 1678750068.211188
+2023-03-13 16:27:48,659 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: summary_record
+2023-03-13 16:27:48,660 INFO    SenderThread:5544 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-03-13 16:27:48,661 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: check_version
+2023-03-13 16:27:48,662 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: check_version
+2023-03-13 16:27:48,737 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: run_start
+2023-03-13 16:27:48,759 DEBUG   HandlerThread:5544 [system_info.py:__init__():31] System info init
+2023-03-13 16:27:48,759 DEBUG   HandlerThread:5544 [system_info.py:__init__():46] System info init done
+2023-03-13 16:27:48,759 INFO    HandlerThread:5544 [system_monitor.py:start():151] Starting system monitor
+2023-03-13 16:27:48,760 INFO    SystemMonitor:5544 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2023-03-13 16:27:48,760 INFO    HandlerThread:5544 [system_monitor.py:probe():172] Collecting system info
+2023-03-13 16:27:48,764 INFO    SystemMonitor:5544 [interfaces.py:start():168] Started cpu
+2023-03-13 16:27:48,767 DEBUG   HandlerThread:5544 [system_info.py:probe():195] Probing system
+2023-03-13 16:27:48,770 INFO    SystemMonitor:5544 [interfaces.py:start():168] Started disk
+2023-03-13 16:27:48,776 DEBUG   HandlerThread:5544 [system_info.py:_probe_git():180] Probing git
+2023-03-13 16:27:48,776 INFO    SystemMonitor:5544 [interfaces.py:start():168] Started memory
+2023-03-13 16:27:48,787 INFO    SystemMonitor:5544 [interfaces.py:start():168] Started network
+2023-03-13 16:27:48,978 DEBUG   HandlerThread:5544 [system_info.py:_probe_git():188] Probing git done
+2023-03-13 16:27:48,978 DEBUG   HandlerThread:5544 [system_info.py:probe():241] Probing system done
+2023-03-13 16:27:48,978 DEBUG   HandlerThread:5544 [system_monitor.py:probe():181] {'os': 'Windows-10-10.0.18363-SP0', 'python': '3.11.1', 'heartbeatAt': '2023-03-13T23:27:48.768922', 'startedAt': '2023-03-13T23:27:48.176207', 'docker': None, 'cuda': None, 'args': ('run',), 'state': 'running', 'program': '-m __main__', 'git': {'remote': 'https://github.com/kurokhtin/heywireai.git', 'commit': 'b41e80ca966eda877d7849d20f371480d0943902'}, 'email': 'akurokhtin@beaconmedianews.com', 'root': 'C:/Users/beaconproduction/sites/local/python/heywire/openai', 'host': 'Production1', 'username': 'beaconproduction', 'executable': 'C:\\Users\\beaconproduction\\sites\\local\\python\\heywire\\openai\\venv\\Scripts\\python.exe', 'cpu_count': 4, 'cpu_count_logical': 4, 'cpu_freq': {'current': 2800.0, 'min': 0.0, 'max': 2800.0}, 'cpu_freq_per_core': [{'current': 2800.0, 'min': 0.0, 'max': 2800.0}], 'disk': {'total': 930.8623695373535, 'used': 416.1713218688965}, 'memory': {'total': 31.927474975585938}}
+2023-03-13 16:27:48,978 INFO    HandlerThread:5544 [system_monitor.py:probe():182] Finished collecting system info
+2023-03-13 16:27:48,979 INFO    HandlerThread:5544 [system_monitor.py:probe():185] Publishing system info
+2023-03-13 16:27:48,979 DEBUG   HandlerThread:5544 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-03-13 16:27:48,980 DEBUG   HandlerThread:5544 [system_info.py:_save_pip():67] Saving pip packages done
+2023-03-13 16:27:48,982 INFO    HandlerThread:5544 [system_monitor.py:probe():187] Finished publishing system info
+2023-03-13 16:27:48,990 DEBUG   SenderThread:5544 [sender.py:send():336] send: files
+2023-03-13 16:27:48,990 INFO    SenderThread:5544 [sender.py:_save_file():1321] saving file wandb-metadata.json with policy now
+2023-03-13 16:27:49,007 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: stop_status
+2023-03-13 16:27:49,008 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: stop_status
+2023-03-13 16:27:49,137 DEBUG   SenderThread:5544 [sender.py:send():336] send: telemetry
+2023-03-13 16:27:49,198 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: log_artifact
+2023-03-13 16:27:49,198 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: log_artifact
+2023-03-13 16:27:49,464 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: partial_history
+2023-03-13 16:27:49,511 INFO    wandb-upload_0:5544 [upload_job.py:push():138] Uploaded file C:\Users\BEACON~1\AppData\Local\Temp\tmpr74j0_cswandb\idoqmm4b-wandb-metadata.json
+2023-03-13 16:27:49,662 INFO    Thread-17 :5544 [dir_watcher.py:_on_file_created():275] file/dir created: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\requirements.txt
+2023-03-13 16:27:49,663 INFO    Thread-17 :5544 [dir_watcher.py:_on_file_created():275] file/dir created: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\wandb-metadata.json
+2023-03-13 16:27:49,663 INFO    Thread-17 :5544 [dir_watcher.py:_on_file_created():275] file/dir created: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\wandb-summary.json
+2023-03-13 16:27:49,664 INFO    Thread-17 :5544 [dir_watcher.py:_on_file_created():275] file/dir created: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\media\table\predictions_0_3c1feb9f9067b04deb9f.table.json
+2023-03-13 16:27:49,664 INFO    Thread-17 :5544 [dir_watcher.py:_on_file_created():275] file/dir created: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\media
+2023-03-13 16:27:49,665 INFO    Thread-17 :5544 [dir_watcher.py:_on_file_created():275] file/dir created: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\media\table
+2023-03-13 16:27:50,371 INFO    wandb-upload_0:5544 [upload_job.py:push():96] Uploaded file C:\Users\beaconproduction\AppData\Local\wandb\wandb\artifacts\staging\tmpjo4axf73
+2023-03-13 16:27:50,468 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: poll_exit
+2023-03-13 16:27:51,211 INFO    SenderThread:5544 [sender.py:send_request_log_artifact():1381] logged artifact run-m6djmhos-predictions - {'id': 'QXJ0aWZhY3Q6Mzk2MzM4NzU1', 'digest': '5e1a573033beadf9839138ab9921fb25', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjU2OTQyNDQ0', 'latestArtifact': None}, 'version': 'latest'}
+2023-03-13 16:27:51,212 DEBUG   SenderThread:5544 [sender.py:send():336] send: files
+2023-03-13 16:27:51,212 INFO    SenderThread:5544 [sender.py:_save_file():1321] saving file media\table\predictions_0_3c1feb9f9067b04deb9f.table.json with policy now
+2023-03-13 16:27:51,213 DEBUG   SenderThread:5544 [sender.py:send():336] send: history
+2023-03-13 16:27:51,213 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: summary_record
+2023-03-13 16:27:51,216 INFO    SenderThread:5544 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-03-13 16:27:51,216 DEBUG   SenderThread:5544 [sender.py:send():336] send: telemetry
+2023-03-13 16:27:51,216 DEBUG   SenderThread:5544 [sender.py:send():336] send: exit
+2023-03-13 16:27:51,217 INFO    SenderThread:5544 [sender.py:send_exit():559] handling exit code: 0
+2023-03-13 16:27:51,217 INFO    SenderThread:5544 [sender.py:send_exit():561] handling runtime: 0
+2023-03-13 16:27:51,218 INFO    SenderThread:5544 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-03-13 16:27:51,218 INFO    SenderThread:5544 [sender.py:send_exit():567] send defer
+2023-03-13 16:27:51,218 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: poll_exit
+2023-03-13 16:27:51,219 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:51,219 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 0
+2023-03-13 16:27:51,220 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:51,222 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 0
+2023-03-13 16:27:51,223 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 1
+2023-03-13 16:27:51,223 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:51,223 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 1
+2023-03-13 16:27:51,224 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:51,224 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 1
+2023-03-13 16:27:51,224 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 2
+2023-03-13 16:27:51,224 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:51,224 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 2
+2023-03-13 16:27:51,224 INFO    HandlerThread:5544 [system_monitor.py:finish():161] Stopping system monitor
+2023-03-13 16:27:51,225 DEBUG   SystemMonitor:5544 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2023-03-13 16:27:51,225 DEBUG   SystemMonitor:5544 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2023-03-13 16:27:51,225 DEBUG   SystemMonitor:5544 [system_monitor.py:_start():141] Publishing last batch of metrics
+2023-03-13 16:27:51,226 INFO    HandlerThread:5544 [interfaces.py:finish():175] Joined cpu
+2023-03-13 16:27:51,226 INFO    HandlerThread:5544 [interfaces.py:finish():175] Joined disk
+2023-03-13 16:27:51,226 INFO    HandlerThread:5544 [interfaces.py:finish():175] Joined memory
+2023-03-13 16:27:51,227 INFO    HandlerThread:5544 [interfaces.py:finish():175] Joined network
+2023-03-13 16:27:51,227 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:51,227 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 2
+2023-03-13 16:27:51,227 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 3
+2023-03-13 16:27:51,227 DEBUG   SenderThread:5544 [sender.py:send():336] send: stats
+2023-03-13 16:27:51,227 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:51,228 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 3
+2023-03-13 16:27:51,228 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:51,228 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 3
+2023-03-13 16:27:51,228 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 4
+2023-03-13 16:27:51,228 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:51,229 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 4
+2023-03-13 16:27:51,229 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:51,229 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 4
+2023-03-13 16:27:51,229 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 5
+2023-03-13 16:27:51,229 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:51,229 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 5
+2023-03-13 16:27:51,230 DEBUG   SenderThread:5544 [sender.py:send():336] send: summary
+2023-03-13 16:27:51,231 INFO    SenderThread:5544 [sender.py:_save_file():1321] saving file wandb-summary.json with policy end
+2023-03-13 16:27:51,232 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:51,232 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 5
+2023-03-13 16:27:51,232 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 6
+2023-03-13 16:27:51,232 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:51,233 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 6
+2023-03-13 16:27:51,233 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:51,233 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 6
+2023-03-13 16:27:51,238 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: status_report
+2023-03-13 16:27:51,407 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 7
+2023-03-13 16:27:51,408 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:51,408 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 7
+2023-03-13 16:27:51,408 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:51,408 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 7
+2023-03-13 16:27:51,408 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 8
+2023-03-13 16:27:51,409 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:51,409 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 8
+2023-03-13 16:27:51,409 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:51,409 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 8
+2023-03-13 16:27:51,410 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 9
+2023-03-13 16:27:51,410 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:51,410 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 9
+2023-03-13 16:27:51,410 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:51,410 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 9
+2023-03-13 16:27:51,410 INFO    SenderThread:5544 [dir_watcher.py:finish():362] shutting down directory watcher
+2023-03-13 16:27:51,468 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: poll_exit
+2023-03-13 16:27:51,663 INFO    Thread-17 :5544 [dir_watcher.py:_on_file_modified():292] file/dir modified: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\wandb-summary.json
+2023-03-13 16:27:51,665 INFO    SenderThread:5544 [dir_watcher.py:_on_file_modified():292] file/dir modified: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\config.yaml
+2023-03-13 16:27:51,666 INFO    SenderThread:5544 [dir_watcher.py:finish():392] scan: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files
+2023-03-13 16:27:51,666 INFO    SenderThread:5544 [dir_watcher.py:finish():406] scan save: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\config.yaml config.yaml
+2023-03-13 16:27:51,667 INFO    SenderThread:5544 [dir_watcher.py:finish():406] scan save: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\requirements.txt requirements.txt
+2023-03-13 16:27:51,667 INFO    SenderThread:5544 [dir_watcher.py:finish():406] scan save: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\wandb-metadata.json wandb-metadata.json
+2023-03-13 16:27:51,667 INFO    SenderThread:5544 [dir_watcher.py:finish():406] scan save: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\wandb-summary.json wandb-summary.json
+2023-03-13 16:27:51,669 INFO    SenderThread:5544 [dir_watcher.py:finish():406] scan save: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\media\table\predictions_0_3c1feb9f9067b04deb9f.table.json media\table\predictions_0_3c1feb9f9067b04deb9f.table.json
+2023-03-13 16:27:51,669 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 10
+2023-03-13 16:27:51,669 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: poll_exit
+2023-03-13 16:27:51,669 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:51,669 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 10
+2023-03-13 16:27:51,670 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:51,670 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 10
+2023-03-13 16:27:51,670 INFO    SenderThread:5544 [file_pusher.py:finish():162] shutting down file pusher
+2023-03-13 16:27:51,684 INFO    wandb-upload_0:5544 [upload_job.py:push():138] Uploaded file C:\Users\BEACON~1\AppData\Local\Temp\tmpr74j0_cswandb\6206qaow-media/table/predictions_0_3c1feb9f9067b04deb9f.table.json
+2023-03-13 16:27:52,121 INFO    wandb-upload_0:5544 [upload_job.py:push():138] Uploaded file C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\requirements.txt
+2023-03-13 16:27:52,191 INFO    wandb-upload_2:5544 [upload_job.py:push():138] Uploaded file C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\wandb-summary.json
+2023-03-13 16:27:52,191 INFO    wandb-upload_1:5544 [upload_job.py:push():138] Uploaded file C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\files\config.yaml
+2023-03-13 16:27:52,394 INFO    Thread-16 (_thread_body):5544 [sender.py:transition_state():587] send defer: 11
+2023-03-13 16:27:52,394 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:52,394 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 11
+2023-03-13 16:27:52,394 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:52,395 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 11
+2023-03-13 16:27:52,395 INFO    SenderThread:5544 [file_pusher.py:join():167] waiting for file pusher
+2023-03-13 16:27:52,395 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 12
+2023-03-13 16:27:52,395 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:52,395 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 12
+2023-03-13 16:27:52,395 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:52,395 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 12
+2023-03-13 16:27:52,469 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: poll_exit
+2023-03-13 16:27:52,732 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 13
+2023-03-13 16:27:52,733 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: poll_exit
+2023-03-13 16:27:52,733 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:52,733 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 13
+2023-03-13 16:27:52,734 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:52,734 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 13
+2023-03-13 16:27:52,734 INFO    SenderThread:5544 [sender.py:transition_state():587] send defer: 14
+2023-03-13 16:27:52,735 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: defer
+2023-03-13 16:27:52,735 DEBUG   SenderThread:5544 [sender.py:send():336] send: final
+2023-03-13 16:27:52,735 INFO    HandlerThread:5544 [handler.py:handle_request_defer():170] handle defer: 14
+2023-03-13 16:27:52,735 DEBUG   SenderThread:5544 [sender.py:send():336] send: footer
+2023-03-13 16:27:52,735 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: defer
+2023-03-13 16:27:52,735 INFO    SenderThread:5544 [sender.py:send_request_defer():583] handle sender defer: 14
+2023-03-13 16:27:52,736 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: poll_exit
+2023-03-13 16:27:52,737 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: server_info
+2023-03-13 16:27:52,737 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: get_summary
+2023-03-13 16:27:52,737 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: poll_exit
+2023-03-13 16:27:52,738 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: sampled_history
+2023-03-13 16:27:52,738 DEBUG   SenderThread:5544 [sender.py:send_request():363] send_request: server_info
+2023-03-13 16:27:52,859 DEBUG   HandlerThread:5544 [handler.py:handle_request():144] handle_request: shutdown
+2023-03-13 16:27:52,859 INFO    HandlerThread:5544 [handler.py:finish():841] shutting down handler
+2023-03-13 16:27:53,737 INFO    WriterThread:5544 [datastore.py:close():299] close: C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_162748-m6djmhos\run-m6djmhos.wandb
+2023-03-13 16:27:53,859 INFO    SenderThread:5544 [sender.py:finish():1493] shutting down sender
+2023-03-13 16:27:53,860 INFO    SenderThread:5544 [file_pusher.py:finish():162] shutting down file pusher
+2023-03-13 16:27:53,860 INFO    SenderThread:5544 [file_pusher.py:join():167] waiting for file pusher

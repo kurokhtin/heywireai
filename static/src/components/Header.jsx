@@ -6,7 +6,7 @@ export default function Header(){
 		<header className="dashboard">
 			<div className="left_header">
 				<a id="logo" href="/">
-					<img src={Logo} height="27" title="HeyWire" alt="logo"/>
+					<img src={Logo} height="35" title="HeyWire" alt="logo"/>
 				</a>
 			</div>
 			<div className="menu_items">
@@ -23,7 +23,7 @@ export default function Header(){
 			</div>
 			<div className="right_header logged">
 				<div className="top_right_header">
-					<div className="welcome_user"><h3>Hi, Alex</h3>
+					<div className="welcome_user"><h3>Hi, Demo</h3>
 						<span>Administrator</span>
 					</div>
 				</div>

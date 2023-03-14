@@ -83,7 +83,7 @@
         background: transparent;
         padding: 0;
         & .empty_block_wrap{
-            min-height: 359px;
+            min-height: 429px;
         }
         & .profile_sticky_wrapper{
             background: $white;
@@ -197,6 +197,7 @@
                     font-weight: bold;
                     color: $black;
                     font-size: 1.15em;
+                    text-align: right;
                 }
                 &:first-child{
                     margin-top: 0;
@@ -209,11 +210,20 @@
                     flex-direction: column;
                     & ul{
                         margin: 5px 0;
+                        & li{
+                            & b{
+                                white-space: nowrap;
+                            }
+                        }
                     }
                 }
             }
         }
     }
+}
+header.page #logo, header.dashboard #logo{
+    height: auto;
+    max-height: 40px;
 }
 
 

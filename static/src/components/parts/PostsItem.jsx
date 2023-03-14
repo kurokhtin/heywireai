@@ -58,7 +58,7 @@ export default function PostsItem(props){
 									</>
 								:
 									<>
-										<div>by AI</div>
+										<div>by HeyWire</div>
 										{moment().format('MMMM D YYYY, h:mm a')}
 									</>
 								}
@@ -108,7 +108,7 @@ export default function PostsItem(props){
 								</>
 							:
 								<>
-									<div>by AI</div>
+									<div>by HeyWire</div>
 									{moment().format('MMMM D YYYY, h:mm a')}
 								</>
 							}

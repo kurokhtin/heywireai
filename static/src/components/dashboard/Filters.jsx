@@ -6,6 +6,8 @@ import SuccessIcon from 'components/icons/SuccessIcon'
 import ErrorIcon from 'components/icons/ErrorIcon'
 import ModalClose from 'components/parts/ModalClose'
 import { Modal } from 'react-responsive-modal';
+import Spinner from 'components/parts/Spinner'
+import ButtonEffect from 'components/parts/ButtonEffect'
 
 export default function Filters(props){
     const [openSmall, setOpenSmall] = useState(false)
@@ -23,7 +25,8 @@ export default function Filters(props){
         location: '',
         writing_style: '',
         total: 0,
-        token: '344a7e67c939a28e3a250d57e3b63cf7'
+        token: '',
+        best: 1
     })
 
     const datetime_options = [
@@ -53,6 +56,17 @@ export default function Filters(props){
         {
             value: 10,
             label: '10'
+        }
+    ]
+
+    const bestof_options = [
+        {
+            value: 1,
+            label: '1'
+        },
+        {
+            value: 2,
+            label: '2'
         }
     ]
 
@@ -299,6 +313,16 @@ export default function Filters(props){
             });
     }
 
+    const handleBlur = (field, max, value) => {
+        console.log(field, max, parseInt(value))
+        if (parseInt(value) < 1) {
+            setFormData((inputFormData) => ({...inputFormData, [field]: 1}))
+        } else if (parseInt(value) > max) {
+            console.log('here')
+            setFormData((inputFormData) => ({...inputFormData, [field]: max}))
+        }
+    };
+
 
 	return(
 		<>
@@ -326,9 +350,10 @@ export default function Filters(props){
                         name="word_count" 
                         autoComplete="off" 
                         required
+                        onBlur={(event) => handleBlur('word_count', 1000, event.target.value)}
                         onChange={inputsHandler} 
                         onKeyPress={handleKeyPress}
-                        defaultValue={inputFormData.word_count}
+                        value={inputFormData.word_count}
                     />
                     <label htmlFor="word_count">Word count</label>
                 </fieldset>
@@ -388,7 +413,22 @@ export default function Filters(props){
                       <input type="text" required className="select_required_input" onChange={handleSelectChange} value={inputFormData.total}/>
                       {inputFormData.total !== 0 ? <label htmlFor="total">Total articles</label> : null}
                 </fieldset>
-                <fieldset className="one_input_wrapper width_50">
+                <fieldset className="one_input_wrapper width_50">          
+                    <Select
+                        id="best" 
+                        name="best"
+                        options={bestof_options}
+                        className="basic-multi-select select_margin_bottom"
+                        classNamePrefix="select"
+                        placeholder="Best of"
+                        onChange={handleSelectChange}
+                        hideSelectedOptions={false}
+                        defaultValue={{ label: '1', value: 1 }}
+                      />
+                      <input type="text" required className="select_required_input" onChange={handleSelectChange} value={inputFormData.best}/>
+                      <label htmlFor="best">Best of</label>
+                </fieldset>
+                <fieldset className="one_input_wrapper width_100">
                     <input 
                         type="text" 
                         id="token" 
@@ -398,10 +438,10 @@ export default function Filters(props){
                         onChange={inputsHandler} 
                         defaultValue={inputFormData.token}
                     />
-                    <label htmlFor="token">Secret token</label>
+                    <label htmlFor="token">API Token</label>
                 </fieldset>
-                <button form="add_assignment_form" className="button add_new_btn" type="submit" disabled={!props.finished}> 
-                    <span>Get Articles</span>
+                <button form="add_assignment_form" className="button submit add_new_btn" type="submit" disabled={!props.finished}> 
+                    {!props.finished ? (<Spinner />) : (<span>Get Articles</span>)}
                 </button>
             </form>
 

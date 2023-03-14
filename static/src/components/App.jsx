@@ -31,7 +31,10 @@ export default function App(){
         loading: false,
         finished: true,
         total: 0,
-        writing_style: ''
+        writing_style: '',
+        token: '',
+        word_count: 0,
+        best: 0
     })
 
     const handleResult = (response) => {
@@ -58,7 +61,10 @@ export default function App(){
             loading: result,
             total: form.total,
             finished: error,
-            writing_style: form.writing_style
+            writing_style: form.writing_style,
+            token: form.token,
+            word_count: form.word_count,
+            best: form.best
         }))
     }
 
@@ -74,18 +80,21 @@ export default function App(){
             if (data.aylienData.length > 0 && data.loading === false) {
                 for (const item of data.aylienData) {
                     const gptItemExist = data.gptData.find(obj => parseInt(obj.id) === parseInt(item.id))
-                    console.log(item.id, data.writing_style)
+                    // console.log(item.id, data.writing_style)
 
                     if (gptItemExist && gptItemExist.loading === true) {
                         let formData = new FormData();
                         formData.append('id', item.id)
                         formData.append('style', data.writing_style)
+                        formData.append('token', data.token)
+                        formData.append('word_count', data.word_count)
+                        formData.append('best', data.best)
                         const headers = { 'Content-Type': 'application/json', 'Accept': 'text/plain' };
 
                         try {
                             const response = await api.post('/api/generate_story', formData, { headers });
                             const index = data.gptData.findIndex(gptItem => gptItem.id === item.id);
-                            console.log(response);
+                            // console.log(response);
 
                             setData((data) => {
                                 if (index !== -1) {

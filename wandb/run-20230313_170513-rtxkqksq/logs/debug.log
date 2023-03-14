@@ -1,0 +1,33 @@
+2023-03-13 17:05:13,689 INFO    Thread-29 (process_request_thread):7892 [wandb_setup.py:_flush():68] Configure stats pid to 7892
+2023-03-13 17:05:13,689 INFO    Thread-29 (process_request_thread):7892 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\.config\wandb\settings
+2023-03-13 17:05:13,689 INFO    Thread-29 (process_request_thread):7892 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\settings
+2023-03-13 17:05:13,689 INFO    Thread-29 (process_request_thread):7892 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-03-13 17:05:13,689 WARNING Thread-29 (process_request_thread):7892 [wandb_setup.py:_flush():68] Could not find program at -m __main__
+2023-03-13 17:05:13,690 INFO    Thread-29 (process_request_thread):7892 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': None, 'program': '-m __main__'}
+2023-03-13 17:05:13,690 INFO    Thread-29 (process_request_thread):7892 [wandb_init.py:_log_setup():492] Logging user logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_170513-rtxkqksq\logs\debug.log
+2023-03-13 17:05:13,690 INFO    Thread-29 (process_request_thread):7892 [wandb_init.py:_log_setup():493] Logging internal logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_170513-rtxkqksq\logs\debug-internal.log
+2023-03-13 17:05:13,691 INFO    Thread-29 (process_request_thread):7892 [wandb_init.py:init():532] calling init triggers
+2023-03-13 17:05:13,691 INFO    Thread-29 (process_request_thread):7892 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {}
+2023-03-13 17:05:13,691 INFO    Thread-29 (process_request_thread):7892 [wandb_init.py:init():588] starting backend
+2023-03-13 17:05:13,691 INFO    Thread-29 (process_request_thread):7892 [wandb_init.py:init():592] setting up manager
+2023-03-13 17:05:13,701 INFO    Thread-29 (process_request_thread):7892 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2023-03-13 17:05:13,714 INFO    Thread-29 (process_request_thread):7892 [wandb_init.py:init():599] backend started and connected
+2023-03-13 17:05:13,723 INFO    Thread-29 (process_request_thread):7892 [wandb_init.py:init():687] updated telemetry
+2023-03-13 17:05:14,526 INFO    Thread-29 (process_request_thread):7892 [wandb_init.py:init():727] communicating run to backend with 60.0 second timeout
+2023-03-13 17:05:14,807 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_on_init():2134] communicating current version
+2023-03-13 17:05:15,536 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_on_init():2143] got version response upgrade_message: "wandb version 0.13.11 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-03-13 17:05:15,536 INFO    Thread-29 (process_request_thread):7892 [wandb_init.py:init():775] starting run threads in backend
+2023-03-13 17:05:16,545 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_console_start():2114] atexit reg
+2023-03-13 17:05:16,545 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_redirect():1969] redirect: 3
+2023-03-13 17:05:16,546 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_redirect():2034] Wrapping output streams.
+2023-03-13 17:05:16,546 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_redirect():2059] Redirects installed.
+2023-03-13 17:05:16,546 INFO    Thread-29 (process_request_thread):7892 [wandb_init.py:init():817] run started, returning control to user process
+2023-03-13 17:05:16,947 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_finish():1854] finishing run heywire/HeywireAI/rtxkqksq
+2023-03-13 17:05:16,947 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_atexit_cleanup():2083] got exitcode: 0
+2023-03-13 17:05:16,948 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_restore():2066] restore
+2023-03-13 17:05:16,948 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_restore():2072] restore done
+2023-03-13 17:05:22,574 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_footer_history_summary_info():3442] rendering history
+2023-03-13 17:05:22,575 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_footer_history_summary_info():3474] rendering summary
+2023-03-13 17:05:22,580 INFO    Thread-29 (process_request_thread):7892 [wandb_run.py:_footer_sync_info():3398] logging synced files

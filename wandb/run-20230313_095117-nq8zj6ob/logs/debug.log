@@ -1,0 +1,43 @@
+2023-03-13 09:51:17,557 INFO    Thread-22 (process_request_thread):11084 [wandb_setup.py:_flush():68] Configure stats pid to 11084
+2023-03-13 09:51:17,557 INFO    Thread-22 (process_request_thread):11084 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\.config\wandb\settings
+2023-03-13 09:51:17,557 INFO    Thread-22 (process_request_thread):11084 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\settings
+2023-03-13 09:51:17,558 INFO    Thread-22 (process_request_thread):11084 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-03-13 09:51:17,558 WARNING Thread-22 (process_request_thread):11084 [wandb_setup.py:_flush():68] Could not find program at -m __main__
+2023-03-13 09:51:17,558 INFO    Thread-22 (process_request_thread):11084 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': None, 'program': '-m __main__'}
+2023-03-13 09:51:17,559 INFO    Thread-22 (process_request_thread):11084 [wandb_init.py:_log_setup():492] Logging user logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_095117-nq8zj6ob\logs\debug.log
+2023-03-13 09:51:17,559 INFO    Thread-22 (process_request_thread):11084 [wandb_init.py:_log_setup():493] Logging internal logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_095117-nq8zj6ob\logs\debug-internal.log
+2023-03-13 09:51:17,559 INFO    Thread-22 (process_request_thread):11084 [wandb_init.py:init():532] calling init triggers
+2023-03-13 09:51:17,560 INFO    Thread-22 (process_request_thread):11084 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {}
+2023-03-13 09:51:17,560 INFO    Thread-22 (process_request_thread):11084 [wandb_init.py:init():588] starting backend
+2023-03-13 09:51:17,560 INFO    Thread-22 (process_request_thread):11084 [wandb_init.py:init():592] setting up manager
+2023-03-13 09:51:17,571 INFO    Thread-22 (process_request_thread):11084 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2023-03-13 09:51:17,580 INFO    Thread-22 (process_request_thread):11084 [wandb_init.py:init():599] backend started and connected
+2023-03-13 09:51:17,588 INFO    Thread-22 (process_request_thread):11084 [wandb_init.py:init():687] updated telemetry
+2023-03-13 09:51:17,682 INFO    Thread-22 (process_request_thread):11084 [wandb_init.py:init():727] communicating run to backend with 60.0 second timeout
+2023-03-13 09:51:17,977 INFO    Thread-22 (process_request_thread):11084 [wandb_run.py:_on_init():2134] communicating current version
+2023-03-13 09:51:18,023 INFO    Thread-22 (process_request_thread):11084 [wandb_run.py:_on_init():2143] got version response upgrade_message: "wandb version 0.13.11 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-03-13 09:51:18,024 INFO    Thread-22 (process_request_thread):11084 [wandb_init.py:init():775] starting run threads in backend
+2023-03-13 09:51:18,312 INFO    Thread-22 (process_request_thread):11084 [wandb_run.py:_console_start():2114] atexit reg
+2023-03-13 09:51:18,312 INFO    Thread-22 (process_request_thread):11084 [wandb_run.py:_redirect():1969] redirect: 3
+2023-03-13 09:51:18,312 INFO    Thread-22 (process_request_thread):11084 [wandb_run.py:_redirect():2034] Wrapping output streams.
+2023-03-13 09:51:18,312 INFO    Thread-22 (process_request_thread):11084 [wandb_run.py:_redirect():2059] Redirects installed.
+2023-03-13 09:51:18,313 INFO    Thread-22 (process_request_thread):11084 [wandb_init.py:init():817] run started, returning control to user process
+2023-03-13 09:51:18,539 INFO    Thread-22 (process_request_thread):11084 [wandb_run.py:_finish():1854] finishing run heywire/HeywireAI/nq8zj6ob
+2023-03-13 09:51:18,539 INFO    Thread-22 (process_request_thread):11084 [wandb_run.py:_atexit_cleanup():2083] got exitcode: 0
+2023-03-13 09:51:18,540 INFO    Thread-22 (process_request_thread):11084 [wandb_run.py:_restore():2066] restore
+2023-03-13 09:51:18,540 INFO    Thread-22 (process_request_thread):11084 [wandb_run.py:_restore():2072] restore done
+2023-03-13 09:51:21,202 INFO    Thread-25 (process_request_thread):11084 [wandb_setup.py:_flush():68] Configure stats pid to 11084
+2023-03-13 09:51:21,202 INFO    Thread-25 (process_request_thread):11084 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\.config\wandb\settings
+2023-03-13 09:51:21,202 INFO    Thread-25 (process_request_thread):11084 [wandb_setup.py:_flush():68] Loading settings from C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\settings
+2023-03-13 09:51:21,202 INFO    Thread-25 (process_request_thread):11084 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-03-13 09:51:21,203 WARNING Thread-25 (process_request_thread):11084 [wandb_setup.py:_flush():68] Could not find program at -m __main__
+2023-03-13 09:51:21,203 INFO    Thread-25 (process_request_thread):11084 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': None, 'program': '-m __main__'}
+2023-03-13 09:51:21,203 INFO    Thread-25 (process_request_thread):11084 [wandb_init.py:_log_setup():492] Logging user logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_095121-oyr0omhf\logs\debug.log
+2023-03-13 09:51:21,204 INFO    Thread-25 (process_request_thread):11084 [wandb_init.py:_log_setup():493] Logging internal logs to C:\Users\beaconproduction\sites\local\python\heywire\openai\wandb\run-20230313_095121-oyr0omhf\logs\debug-internal.log
+2023-03-13 09:51:21,204 INFO    Thread-25 (process_request_thread):11084 [wandb_init.py:init():532] calling init triggers
+2023-03-13 09:51:21,204 INFO    Thread-25 (process_request_thread):11084 [wandb_init.py:init():538] wandb.init called with sweep_config: {}
+config: {}
+2023-03-13 09:51:21,204 INFO    Thread-25 (process_request_thread):11084 [wandb_init.py:init():583] wandb.init() called when a run is still active
+2023-03-13 09:51:21,404 INFO    Thread-25 (process_request_thread):11084 [wandb_run.py:_finish():1854] finishing run heywire/HeywireAI/nq8zj6ob
